@@ -1,10 +1,17 @@
 export const appCopy = {
   title: "Mirroring Mind",
-  eyebrow: "A quiet reflection journey",
+  eyebrow: "A quiet self-observation journey",
   welcome:
     "This is not a test. It is a quiet place to notice how your inner world moves today.",
-  note:
-    "You will move through five gentle spaces: how you begin, what you feel first, how meaning forms, how you respond, and what else might also be true. There are no right answers. Choose what feels closest.",
+  welcomeLines: [
+    "You will move through five gentle spaces:",
+    "how you begin,",
+    "what you feel first,",
+    "how meaning forms,",
+    "how you respond,",
+    "and what else might also be true."
+  ],
+  note: "There are no right answers. Choose what feels closest.",
   mapTitle: "The Five Spaces",
   mapText:
     "Move through them slowly, one at a time. Each space reflects a different movement of your inner world.",
