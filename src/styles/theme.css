@@ -319,3 +319,47 @@ p { color: var(--muted); line-height: 1.75; }
     font-size: 1rem;
   }
 }
+.quest-intro-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 72px 24px;
+}
+
+.quest-intro-panel {
+  width: min(680px, 100%);
+  text-align: center;
+  padding: 48px 32px 56px;
+}
+
+.back-button {
+  margin-bottom: 32px;
+}
+
+.quest-mark {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #8fa89a;
+  color: #fff9ee;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+}
+
+.quest-intro-panel h1 {
+  margin: 10px auto 16px;
+  max-width: 560px;
+}
+
+.quest-intro-panel .lead {
+  max-width: 560px;
+  margin: 0 auto 18px;
+}
+
+.quest-intro-panel .soft-note {
+  max-width: 520px;
+  margin: 0 auto 34px;
+}
