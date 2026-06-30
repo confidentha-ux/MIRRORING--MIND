@@ -1,22 +1,19 @@
-import ProgressTrail from "./ProgressTrail";
-import { buildStageReflection } from "../utils/resultBuilder";
+import { appCopy } from "../data/prompts";
 
-export default function StageReflection({ quest, quests, activeIndex, responses, onContinue, onMap }) {
-  const reflection = buildStageReflection(quest, responses);
-
+export default function WelcomeScreen({ onBegin, hasSavedJourney, onResume }) {
   return (
-    <main className={"screen quest-screen " + quest.accent}>
-      <ProgressTrail quests={quests} activeIndex={activeIndex} questionIndex={0} questionCount={0} />
-      <section className="quest-card stage-reflection-card soft-panel">
-        <p className="eyebrow">A small reflection - {quest.metaphor}</p>
-        <h1>{reflection.title}</h1>
-        <div className="reflection-lines">
-          {reflection.lines.map((line) => <p key={line}>{line}</p>)}
+    <main className="screen welcome-screen">
+      <section className="hero-panel quiet-room motif-door">
+        <p className="soft-kicker">{appCopy.eyebrow}</p>
+        <h1>{appCopy.title}</h1>
+        <p className="lead">{appCopy.welcome}</p>
+        <div className="welcome-lines">
+          {appCopy.welcomeLines.map((line) => <p key={line}>{line}</p>)}
         </div>
-        <p className="soft-note">This is not a label. It is only a warm mirror for this part of the journey.</p>
+        <p className="soft-note">{appCopy.note}</p>
         <div className="button-row">
-          <button className="primary-button" onClick={onContinue} type="button">Carry this forward</button>
-          <button className="secondary-button" onClick={onMap} type="button">Return to the five spaces</button>
+          <button className="primary-button" onClick={onBegin} type="button">Begin gently</button>
+          {hasSavedJourney && <button className="secondary-button" onClick={onResume} type="button">Return to where I was</button>}
         </div>
       </section>
     </main>
