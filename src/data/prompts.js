@@ -1,22 +1,32 @@
 export const appCopy = {
   title: "Mirroring Mind",
-  eyebrow: "A quiet self-observation journey",
-  welcome:
-    "This is not a test. It is a quiet place to notice how your inner world moves today.",
-  welcomeLines: [
-    "You will move through five gentle spaces:",
-    "how you begin,",
-    "what you feel first,",
-    "how meaning forms,",
-    "how you respond,",
-    "and what else might also be true."
+  eyebrow: "A mirror for your inner reaction",
+
+  landingIntro: [
+    "When something happens,",
+    "your mind moves before you can explain it.",
+    "",
+    "A feeling rises.",
+    "A sentence forms.",
+    "Your body prepares.",
+    "A response begins."
   ],
-  note: "There are no right answers. Choose what feels closest.",
-  mapTitle: "The Five Spaces",
+
+  landingCore: "What feels like a reaction may actually have a path.",
+
+  landingBody: [
+    "Mirroring Mind helps you slow that moment down and follow the path gently.",
+    "Through five quiet quests, you will notice how your inner world begins, feels, explains, responds, and opens to another possible view.",
+    "After each quest, you will receive a small reflection of what your answers may be showing.",
+    "At the end, you will see today’s inner pattern — not as a label, but as a clearer way to understand how you meet the world, and how you might meet yourself."
+  ],
+
+  mapTitle: "The Five Quiet Quests",
   mapText:
-    "Move through them slowly, one at a time. Each space reflects a different movement of your inner world.",
+    "Each quest opens one small part of your inner reaction. Move through them slowly, one at a time.",
+
   finalNote:
-    "This is not a label. It is a snapshot of how your inner world moved today.",
+    "This is not a label. It is a snapshot of how your inner world moved today."
 };
 
 export const carrySentenceOptions = [
@@ -24,5 +34,5 @@ export const carrySentenceOptions = [
   "One feeling can be real without being the whole story.",
   "I can move slowly enough to see another possibility.",
   "A pattern can be met with steadiness, not judgment.",
-  "Today, I can make room for what I notice.",
+  "Today, I can make room for what I notice."
 ];
