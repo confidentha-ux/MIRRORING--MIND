@@ -2,14 +2,14 @@ export const appCopy = {
   title: "Mirroring Mind",
   eyebrow: "A quiet reflection journey",
   welcome:
-    "Open five gentle spaces and notice how your inner world moves today.",
+    "This is not a test. It is a quiet place to notice how your inner world moves today.",
   note:
-    "This is not a test, diagnosis, or score. It is a private reflection you can meet at your own pace.",
-  mapTitle: "Choose the next door",
+    "You will move through five gentle spaces: how you begin, what you feel first, how meaning forms, how you respond, and what else might also be true. There are no right answers. Choose what feels closest.",
+  mapTitle: "The Five Spaces",
   mapText:
-    "Each space opens in order. You are not trying to win anything here. You are simply noticing.",
+    "Move through them slowly, one at a time. Each space reflects a different movement of your inner world.",
   finalNote:
-    "This is not a label. It is a snapshot of how your inner world moved today."
+    "This is not a label. It is a snapshot of how your inner world moved today.",
 };
 
 export const carrySentenceOptions = [
@@ -17,5 +17,5 @@ export const carrySentenceOptions = [
   "One feeling can be real without being the whole story.",
   "I can move slowly enough to see another possibility.",
   "A pattern can be met with steadiness, not judgment.",
-  "Today, I can make room for what I notice."
+  "Today, I can make room for what I notice.",
 ];
