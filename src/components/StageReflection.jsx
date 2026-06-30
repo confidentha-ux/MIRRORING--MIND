@@ -258,9 +258,15 @@ export default function StageReflection({
           })
         });
 
-        if (!response.ok) {
-          throw new Error("Reflection request failed.");
-        }
+         if (!response.ok) {
+  const errorData = await response.json().catch(() => null);
+
+  throw new Error(
+    errorData?.detail ||
+      errorData?.error ||
+      `Reflection request failed with status ${response.status}`
+  );
+  }
 
         const data = await response.json();
 
