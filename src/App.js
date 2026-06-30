@@ -34,7 +34,11 @@ export default function App() {
   const activeQuest = quests[journey.questIndex];
   const activeQuestion = activeQuest?.questions[journey.questionIndex];
   const currentValue = journey.responses?.[activeQuest?.id]?.[activeQuestion?.id];
-  const reflection = useMemo(() => buildReflectionCard(journey.responses), [journey.responses]);
+
+  const reflection = useMemo(
+    () => buildReflectionCard(journey.responses),
+    [journey.responses]
+  );
 
   function updateJourney(next) {
     setJourney((current) => ({ ...current, ...next }));
@@ -43,11 +47,15 @@ export default function App() {
   function resetJourney() {
     clearJourney();
     setSavedJourney(null);
-    setJourney({ ...initialState, screen: "welcome" });
+    setJourney({ ...initialState });
   }
 
   function openQuest(index) {
-    updateJourney({ screen: "intro", questIndex: index, questionIndex: 0 });
+    updateJourney({
+      screen: "intro",
+      questIndex: index,
+      questionIndex: 0
+    });
   }
 
   function updateResponse(value) {
@@ -68,6 +76,7 @@ export default function App() {
       updateJourney({ questionIndex: journey.questionIndex + 1 });
       return;
     }
+
     updateJourney({
       screen: "stageReflection",
       unlockedIndex: Math.max(journey.unlockedIndex, journey.questIndex + 1)
@@ -79,6 +88,7 @@ export default function App() {
       updateJourney({ questionIndex: journey.questionIndex - 1 });
       return;
     }
+
     updateJourney({ screen: "intro" });
   }
 
@@ -87,6 +97,7 @@ export default function App() {
       updateJourney({ screen: "final" });
       return;
     }
+
     updateJourney({
       screen: "intro",
       questIndex: journey.questIndex + 1,
