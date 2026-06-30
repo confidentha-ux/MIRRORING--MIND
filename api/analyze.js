@@ -142,7 +142,7 @@ Keep each field concise.
         "anthropic-version": "2023-06-01"
       },
       body: JSON.stringify({
-        model: process.env.CLAUDE_MODEL || "claude-3-5-sonnet-20241022",
+        model: process.env.CLAUDE_MODEL || "claude-haiku-4-5-20251001",
         max_tokens: 900,
         temperature: 0.7,
         messages: [
@@ -155,9 +155,15 @@ Keep each field concise.
     });
 
     if (!claudeResponse.ok) {
-      return res.status(200).json(fallbackReflection(questIndex));
-    }
+  const errorText = await claudeResponse.text();
 
+  return res.status(500).json({
+    error: "Claude API request failed",
+    status: claudeResponse.status,
+    detail: errorText
+  });
+}
+ 
     const data = await claudeResponse.json();
     const text = data?.content?.[0]?.text || "";
 
