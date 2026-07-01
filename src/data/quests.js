@@ -1,5 +1,6 @@
 export const quests = [
   {
+  {
   "id": "begin",
   "number": 1,
   "title": "How You Begin",
@@ -13,12 +14,12 @@ export const quests = [
       "id": "begin-project",
       "prompt": "A new project arrives, and you need to choose a direction within a week. What do you do first?",
       "choices": [
-        "Gather related examples and information",
-        "Start with one small task",
         "Talk it through with someone",
-        "Check risks and possible failure points",
         "Pause and watch what becomes clearer",
-        "Notice the direction you intuitively feel drawn to"
+        "Gather related examples and information",
+        "Notice the direction you intuitively feel drawn to",
+        "Check risks and possible failure points",
+        "Start with one small task"
       ],
       "styleMap": {
         "Gather related examples and information": "understanding",
@@ -34,12 +35,12 @@ export const quests = [
       "id": "begin-wrong",
       "prompt": "Something you thought was right turns out to be wrong. What thought appears first?",
       "choices": [
+        "I pause before deciding what it means",
         "I want to understand where my judgment shifted",
-        "I accept the fact and move to the next step",
+        "I wonder what mood or signal I missed",
         "I wonder how other people are seeing this",
         "I think about how to avoid repeating it",
-        "I pause before deciding what it means",
-        "I wonder what mood or signal I missed"
+        "I accept the fact and move to the next step"
       ],
       "styleMap": {
         "I want to understand where my judgment shifted": "understanding",
@@ -55,12 +56,12 @@ export const quests = [
       "id": "begin-limited-info",
       "prompt": "You need to make an important choice, but the information is limited. What do you usually do?",
       "choices": [
-        "Keep looking until I understand enough",
-        "Decide first and adjust later",
         "Talk with someone I trust",
-        "Check what feels safest or most stable",
         "Wait and watch the situation a little longer",
-        "Follow the direction that feels right"
+        "Keep looking until I understand enough",
+        "Follow the direction that feels right",
+        "Check what feels safest or most stable",
+        "Decide first and adjust later"
       ],
       "styleMap": {
         "Keep looking until I understand enough": "understanding",
@@ -76,12 +77,12 @@ export const quests = [
       "id": "begin-surprise",
       "prompt": "A result is completely different from what you expected. What do you do first?",
       "choices": [
-        "Look for the cause",
+        "Look for another interpretation or possibility",
         "Try again in a different way",
-        "Listen to another person's view",
-        "Organize myself and steady the situation",
+        "Look for the cause",
         "Pause until the surprise settles",
-        "Look for another interpretation or possibility"
+        "Listen to another person's view",
+        "Organize myself and steady the situation"
       ],
       "styleMap": {
         "Look for the cause": "understanding",
@@ -97,11 +98,11 @@ export const quests = [
       "id": "begin-misunderstood",
       "prompt": "Someone seems to misunderstand you. How do you usually respond?",
       "choices": [
-        "Try to explain fully",
-        "Do something to clear the situation",
         "Notice the other person's feelings first",
-        "Protect my energy and keep things steady",
+        "Try to explain fully",
         "Let time settle it before responding",
+        "Protect my energy and keep things steady",
+        "Do something to clear the situation",
         "Wonder why the misunderstanding happened"
       ],
       "styleMap": {
@@ -118,11 +119,11 @@ export const quests = [
       "id": "begin-stuck",
       "prompt": "A situation has stayed unresolved for days. How do you move?",
       "choices": [
-        "Revisit the definition and edges of the issue",
+        "Step away and return after rest",
         "Try a completely different way",
         "Ask someone for help",
+        "Revisit the definition and edges of the issue",
         "Create structure around what is still unresolved",
-        "Step away and return after rest",
         "Keep searching because another way may exist"
       ],
       "styleMap": {
@@ -139,12 +140,12 @@ export const quests = [
       "id": "begin-learning",
       "prompt": "You need to learn a new subject. Where do you begin?",
       "choices": [
-        "Understand concepts and principles first",
         "Learn by doing",
+        "Understand concepts and principles first",
+        "Start with the part that draws my attention",
         "Learn through someone with experience",
-        "Look at the overall structure first",
         "Give myself time to absorb it slowly",
-        "Start with the part that draws my attention"
+        "Look at the overall structure first"
       ],
       "styleMap": {
         "Understand concepts and principles first": "understanding",
@@ -160,11 +161,11 @@ export const quests = [
       "id": "begin-discomfort",
       "prompt": "Which situation feels most uncomfortable?",
       "choices": [
-        "Deciding before I fully understand",
-        "Waiting when I cannot do anything",
-        "Carrying all the responsibility alone",
         "Facing a very uncertain future",
         "Being pushed to respond before I am ready",
+        "Deciding before I fully understand",
+        "Carrying all the responsibility alone",
+        "Waiting when I cannot do anything",
         "Not being able to explain why I acted"
       ],
       "styleMap": {
@@ -181,12 +182,12 @@ export const quests = [
       "id": "begin-flow",
       "prompt": "When do you feel most absorbed?",
       "choices": [
+        "When I discover a new possibility",
         "When something complex becomes clear",
         "When I solve something directly",
         "When I feel deeply connected with someone",
         "When things move steadily",
-        "When I can stay with something without rushing",
-        "When I discover a new possibility"
+        "When I can stay with something without rushing"
       ],
       "styleMap": {
         "When something complex becomes clear": "understanding",
@@ -202,12 +203,12 @@ export const quests = [
       "id": "begin-heavy-day",
       "prompt": "When your mind has been busy all day, how do you usually settle it?",
       "choices": [
-        "Keep thinking it through",
-        "Move and let action carry me",
-        "Talk with someone",
         "Return to a steady routine",
+        "Talk with someone",
         "Let it calm with time",
-        "Follow the feeling that keeps appearing"
+        "Move and let action carry me",
+        "Follow the feeling that keeps appearing",
+        "Keep thinking it through"
       ],
       "styleMap": {
         "Keep thinking it through": "understanding",
@@ -223,12 +224,12 @@ export const quests = [
       "id": "begin-values",
       "prompt": "When two important things collide, what tends to guide your choice?",
       "choices": [
+        "What helps more people",
+        "What my heart moves toward right now",
+        "What feels safer",
         "What feels most logical",
         "What I can actually do next",
-        "What helps more people",
-        "What feels safer",
-        "What still feels true after I wait",
-        "What my heart moves toward right now"
+        "What still feels true after I wait"
       ],
       "styleMap": {
         "What feels most logical": "understanding",
@@ -241,7 +242,7 @@ export const quests = [
       "reflection": "Add a few words about why this feels close."
     }
   ]
-},  
+},
 {
   "id": "feel",
     "id": "feel",
