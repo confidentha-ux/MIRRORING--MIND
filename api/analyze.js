@@ -3,11 +3,13 @@ function questInstruction(questIndex) {
     return `
 This is Quest II: The First Feeling.
 Analyze the user's first-feeling pattern.
+
 Focus on:
 - what feeling seems to rise first
 - how the user relates to that feeling
 - what the feeling may protect
 - what it may make harder
+- how the user's Quest I beginning style may shape this feeling
 - one gentle question to carry forward
 `;
   }
@@ -16,10 +18,12 @@ Focus on:
     return `
 This is Quest III: The Inner Sentence.
 Analyze the user's meaning-making pattern.
+
 Focus on:
 - what inner sentence or interpretation seems to form
 - what that sentence may protect
 - what it may narrow
+- how the user's earlier beginning style and first-feeling pattern may shape this sentence
 - where another meaning may become possible
 - one gentle question to carry forward
 `;
@@ -29,11 +33,13 @@ Focus on:
     return `
 This is Quest IV: The Inner Path.
 Analyze the user's response path.
+
 Focus on:
 - situation → feeling → body → thought → response
 - where the pattern repeats
 - what the path helps the user do
 - what it may cost
+- how the previous quest reflections connect to this response path
 - one possible pause point
 `;
   }
@@ -41,11 +47,13 @@ Focus on:
   return `
 This is Quest V: The Wider View.
 Analyze the user's ability to allow another possible view.
+
 Focus on:
 - what alternative view the user can allow
 - what remains difficult
 - how the first feeling can remain valid
 - how the view can widen without forced positivity
+- how the previous quest reflections connect to this wider view
 - one gentle question to carry forward
 `;
 }
@@ -85,7 +93,9 @@ export default async function handler(req, res) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
   if (!apiKey) {
-    return res.status(200).json(fallbackReflection(req.body?.questIndex));
+    return res.status(500).json({
+      error: "Missing ANTHROPIC_API_KEY"
+    });
   }
 
   const {
@@ -93,27 +103,41 @@ export default async function handler(req, res) {
     questTitle,
     questSpaceLabel,
     questIntro,
-    responses
+    responses,
+    cachedContext
   } = req.body || {};
 
   const prompt = `
 You are writing a gentle reflection sheet for a self-observation app called Mirroring Mind.
 
 The app helps users notice the path of an inner reaction.
-Do not diagnose.
-Do not score.
-Do not label the user as a fixed identity.
-Do not sound clinical.
-Do not overpraise.
-Use warm, precise, reflective language.
+
+Important rules:
+- Do not diagnose.
+- Do not score.
+- Do not label the user as a fixed identity.
+- Do not sound clinical.
+- Do not overpraise.
+- Do not force positivity.
+- Use warm, precise, reflective language.
+- Treat the user's answers as signals, not proof.
+- Say "may suggest" or "seems to" rather than making absolute claims.
 
 ${questInstruction(questIndex)}
 
-Quest title: ${questTitle || ""}
-Quest space label: ${questSpaceLabel || ""}
-Quest intro: ${questIntro || ""}
+Quest title:
+${questTitle || ""}
 
-User responses:
+Quest space label:
+${questSpaceLabel || ""}
+
+Quest intro:
+${questIntro || ""}
+
+Previous saved reflections for context:
+${JSON.stringify(cachedContext || {}, null, 2)}
+
+Current quest responses:
 ${JSON.stringify(responses || {}, null, 2)}
 
 Return ONLY valid JSON in this exact shape:
@@ -130,7 +154,9 @@ Return ONLY valid JSON in this exact shape:
 }
 
 Use the correct quest number in eyebrow.
-Keep each field concise.
+Keep each field concise but meaningful.
+Do not include markdown.
+Do not include explanation outside JSON.
 `;
 
   try {
@@ -155,22 +181,34 @@ Keep each field concise.
     });
 
     if (!claudeResponse.ok) {
-  const errorText = await claudeResponse.text();
+      const errorText = await claudeResponse.text();
 
-  return res.status(500).json({
-    error: "Claude API request failed",
-    status: claudeResponse.status,
-    detail: errorText
-  });
-}
- 
+      return res.status(500).json({
+        error: "Claude API request failed",
+        status: claudeResponse.status,
+        detail: errorText
+      });
+    }
+
     const data = await claudeResponse.json();
     const text = data?.content?.[0]?.text || "";
 
-    const parsed = JSON.parse(text);
+    let parsed;
+
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      return res.status(500).json({
+        error: "Claude returned invalid JSON",
+        raw: text
+      });
+    }
 
     return res.status(200).json(parsed);
   } catch (error) {
-    return res.status(200).json(fallbackReflection(questIndex));
+    return res.status(500).json({
+      error: "Analyze API failed",
+      detail: error.message || String(error)
+    });
   }
 }
