@@ -1,149 +1,248 @@
 export const quests = [
   {
-    "id": "begin",
-    "number": 1,
-    "title": "How You Begin",
-    "motif": "First door",
-    "accent": "sage",
-    "purpose": "Notice your default way of starting: understanding, acting, connecting, protecting stability, or trusting intuition.",
-    "intro": "Before a moment becomes clear, something in you usually moves first. This door asks how you tend to begin.",
-    "reward": "You opened the first door. You noticed how you tend to begin.",
-    "questions": [
-      {
-        "id": "begin-project",
-        "prompt": "A new project arrives, and you need to choose a direction within a week. What do you do first?",
-        "choices": [
-          "Gather related examples and information",
-          "Start with one small task",
-          "Talk it through with someone",
-          "Check risks and possible failure points",
-          "Notice the direction you intuitively feel drawn to"
-        ],
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-wrong",
-        "prompt": "Something you thought was right turns out to be wrong. What thought appears first?",
-        "choices": [
-          "Where did my judgment shift?",
-          "I can accept the fact and move on",
-          "I wonder how other people see this",
-          "How can I avoid repeating this?",
-          "What mood or signal did I miss?"
-        ],
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-limited-info",
-        "prompt": "You need to make an important choice, but the information is limited. What do you usually do?",
-        "choices": [
-          "Keep looking until I have enough information",
-          "Decide first and adjust later",
-          "Talk with someone I trust",
-          "Wait and watch the situation",
-          "Follow the direction that feels right"
-        ],
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-surprise",
-        "prompt": "A result is completely different from what you expected. What do you do first?",
-        "choices": [
-          "Look for the cause",
-          "Try again",
-          "Listen to another person's view",
-          "Pause and organize myself",
-          "Look for another interpretation or possibility"
-        ],
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-misunderstood",
-        "prompt": "Someone seems to misunderstand you. How do you usually respond?",
-        "choices": [
-          "Try to explain fully",
-          "Trust that time may settle it",
-          "Notice the other person's feelings first",
-          "Let it pass without spending more energy",
-          "Wonder why the misunderstanding happened"
-        ],
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-stuck",
-        "prompt": "A situation has stayed unresolved for days. How do you move?",
-        "choices": [
-          "Revisit the definition and edges of the issue",
-          "Try a completely different way",
-          "Ask someone for help",
-          "Step away and return after rest",
-          "Keep searching because another way may exist"
-        ],
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-learning",
-        "prompt": "You need to learn a new subject. Where do you begin?",
-        "choices": [
-          "Understand concepts and principles first",
-          "Learn by doing",
-          "Learn through someone with experience",
-          "Look at the overall structure first",
-          "Start with the part that interests me"
-        ],
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-discomfort",
-        "prompt": "Which situation feels most uncomfortable?",
-        "choices": [
-          "Deciding before I fully understand",
-          "Waiting when I cannot do anything",
-          "Carrying all the responsibility alone",
-          "Facing a very uncertain future",
-          "Not being able to explain why I acted"
-        ],
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-flow",
-        "prompt": "When do you feel most absorbed?",
-        "choices": [
-          "When something complex becomes clear",
-          "When I solve something directly",
-          "When I feel deeply connected with someone",
-          "When things move steadily",
-          "When I discover a new possibility"
-        ],
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-heavy-day",
-        "prompt": "When your mind has been busy all day, how do you usually settle it?",
-        "choices": [
-          "Keep thinking it through",
-          "Move and let action carry me",
-          "Talk with someone",
-          "Let it calm with time",
-          "Follow the feeling that keeps appearing"
-        ],
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-values",
-        "prompt": "When two important things collide, what tends to guide your choice?",
-        "choices": [
-          "What feels most logical",
-          "What will stay with me longer",
-          "What helps more people",
-          "What feels safer",
-          "What my heart moves toward right now"
-        ],
-        "reflection": "Add a few words about why this feels close."
-      }
-    ]
-  },
   {
+  "id": "begin",
+  "number": 1,
+  "title": "How You Begin",
+  "motif": "First door",
+  "accent": "sage",
+  "purpose": "Notice your beginning style: understanding, action, connection, stability, waiting, or intuition.",
+  "intro": "Before a moment becomes clear, something in you usually moves first. This first quest helps you notice how you tend to begin.",
+  "reward": "You opened the first door. You noticed the first movement your mind may reach for.",
+  "questions": [
+    {
+      "id": "begin-project",
+      "prompt": "A new project arrives, and you need to choose a direction within a week. What do you do first?",
+      "choices": [
+        "Gather related examples and information",
+        "Start with one small task",
+        "Talk it through with someone",
+        "Check risks and possible failure points",
+        "Pause and watch what becomes clearer",
+        "Notice the direction you intuitively feel drawn to"
+      ],
+      "styleMap": {
+        "Gather related examples and information": "understanding",
+        "Start with one small task": "action",
+        "Talk it through with someone": "connection",
+        "Check risks and possible failure points": "stability",
+        "Pause and watch what becomes clearer": "waiting",
+        "Notice the direction you intuitively feel drawn to": "intuition"
+      },
+      "reflection": "Add a few words about why this feels close."
+    },
+    {
+      "id": "begin-wrong",
+      "prompt": "Something you thought was right turns out to be wrong. What thought appears first?",
+      "choices": [
+        "I want to understand where my judgment shifted",
+        "I accept the fact and move to the next step",
+        "I wonder how other people are seeing this",
+        "I think about how to avoid repeating it",
+        "I pause before deciding what it means",
+        "I wonder what mood or signal I missed"
+      ],
+      "styleMap": {
+        "I want to understand where my judgment shifted": "understanding",
+        "I accept the fact and move to the next step": "action",
+        "I wonder how other people are seeing this": "connection",
+        "I think about how to avoid repeating it": "stability",
+        "I pause before deciding what it means": "waiting",
+        "I wonder what mood or signal I missed": "intuition"
+      },
+      "reflection": "Add a few words about why this feels close."
+    },
+    {
+      "id": "begin-limited-info",
+      "prompt": "You need to make an important choice, but the information is limited. What do you usually do?",
+      "choices": [
+        "Keep looking until I understand enough",
+        "Decide first and adjust later",
+        "Talk with someone I trust",
+        "Check what feels safest or most stable",
+        "Wait and watch the situation a little longer",
+        "Follow the direction that feels right"
+      ],
+      "styleMap": {
+        "Keep looking until I understand enough": "understanding",
+        "Decide first and adjust later": "action",
+        "Talk with someone I trust": "connection",
+        "Check what feels safest or most stable": "stability",
+        "Wait and watch the situation a little longer": "waiting",
+        "Follow the direction that feels right": "intuition"
+      },
+      "reflection": "Add a few words about why this feels close."
+    },
+    {
+      "id": "begin-surprise",
+      "prompt": "A result is completely different from what you expected. What do you do first?",
+      "choices": [
+        "Look for the cause",
+        "Try again in a different way",
+        "Listen to another person's view",
+        "Organize myself and steady the situation",
+        "Pause until the surprise settles",
+        "Look for another interpretation or possibility"
+      ],
+      "styleMap": {
+        "Look for the cause": "understanding",
+        "Try again in a different way": "action",
+        "Listen to another person's view": "connection",
+        "Organize myself and steady the situation": "stability",
+        "Pause until the surprise settles": "waiting",
+        "Look for another interpretation or possibility": "intuition"
+      },
+      "reflection": "Add a few words about why this feels close."
+    },
+    {
+      "id": "begin-misunderstood",
+      "prompt": "Someone seems to misunderstand you. How do you usually respond?",
+      "choices": [
+        "Try to explain fully",
+        "Do something to clear the situation",
+        "Notice the other person's feelings first",
+        "Protect my energy and keep things steady",
+        "Let time settle it before responding",
+        "Wonder why the misunderstanding happened"
+      ],
+      "styleMap": {
+        "Try to explain fully": "understanding",
+        "Do something to clear the situation": "action",
+        "Notice the other person's feelings first": "connection",
+        "Protect my energy and keep things steady": "stability",
+        "Let time settle it before responding": "waiting",
+        "Wonder why the misunderstanding happened": "intuition"
+      },
+      "reflection": "Add a few words about why this feels close."
+    },
+    {
+      "id": "begin-stuck",
+      "prompt": "A situation has stayed unresolved for days. How do you move?",
+      "choices": [
+        "Revisit the definition and edges of the issue",
+        "Try a completely different way",
+        "Ask someone for help",
+        "Create structure around what is still unresolved",
+        "Step away and return after rest",
+        "Keep searching because another way may exist"
+      ],
+      "styleMap": {
+        "Revisit the definition and edges of the issue": "understanding",
+        "Try a completely different way": "action",
+        "Ask someone for help": "connection",
+        "Create structure around what is still unresolved": "stability",
+        "Step away and return after rest": "waiting",
+        "Keep searching because another way may exist": "intuition"
+      },
+      "reflection": "Add a few words about why this feels close."
+    },
+    {
+      "id": "begin-learning",
+      "prompt": "You need to learn a new subject. Where do you begin?",
+      "choices": [
+        "Understand concepts and principles first",
+        "Learn by doing",
+        "Learn through someone with experience",
+        "Look at the overall structure first",
+        "Give myself time to absorb it slowly",
+        "Start with the part that draws my attention"
+      ],
+      "styleMap": {
+        "Understand concepts and principles first": "understanding",
+        "Learn by doing": "action",
+        "Learn through someone with experience": "connection",
+        "Look at the overall structure first": "stability",
+        "Give myself time to absorb it slowly": "waiting",
+        "Start with the part that draws my attention": "intuition"
+      },
+      "reflection": "Add a few words about why this feels close."
+    },
+    {
+      "id": "begin-discomfort",
+      "prompt": "Which situation feels most uncomfortable?",
+      "choices": [
+        "Deciding before I fully understand",
+        "Waiting when I cannot do anything",
+        "Carrying all the responsibility alone",
+        "Facing a very uncertain future",
+        "Being pushed to respond before I am ready",
+        "Not being able to explain why I acted"
+      ],
+      "styleMap": {
+        "Deciding before I fully understand": "understanding",
+        "Waiting when I cannot do anything": "action",
+        "Carrying all the responsibility alone": "connection",
+        "Facing a very uncertain future": "stability",
+        "Being pushed to respond before I am ready": "waiting",
+        "Not being able to explain why I acted": "intuition"
+      },
+      "reflection": "Add a few words about why this feels close."
+    },
+    {
+      "id": "begin-flow",
+      "prompt": "When do you feel most absorbed?",
+      "choices": [
+        "When something complex becomes clear",
+        "When I solve something directly",
+        "When I feel deeply connected with someone",
+        "When things move steadily",
+        "When I can stay with something without rushing",
+        "When I discover a new possibility"
+      ],
+      "styleMap": {
+        "When something complex becomes clear": "understanding",
+        "When I solve something directly": "action",
+        "When I feel deeply connected with someone": "connection",
+        "When things move steadily": "stability",
+        "When I can stay with something without rushing": "waiting",
+        "When I discover a new possibility": "intuition"
+      },
+      "reflection": "Add a few words about why this feels close."
+    },
+    {
+      "id": "begin-heavy-day",
+      "prompt": "When your mind has been busy all day, how do you usually settle it?",
+      "choices": [
+        "Keep thinking it through",
+        "Move and let action carry me",
+        "Talk with someone",
+        "Return to a steady routine",
+        "Let it calm with time",
+        "Follow the feeling that keeps appearing"
+      ],
+      "styleMap": {
+        "Keep thinking it through": "understanding",
+        "Move and let action carry me": "action",
+        "Talk with someone": "connection",
+        "Return to a steady routine": "stability",
+        "Let it calm with time": "waiting",
+        "Follow the feeling that keeps appearing": "intuition"
+      },
+      "reflection": "Add a few words about why this feels close."
+    },
+    {
+      "id": "begin-values",
+      "prompt": "When two important things collide, what tends to guide your choice?",
+      "choices": [
+        "What feels most logical",
+        "What I can actually do next",
+        "What helps more people",
+        "What feels safer",
+        "What still feels true after I wait",
+        "What my heart moves toward right now"
+      ],
+      "styleMap": {
+        "What feels most logical": "understanding",
+        "What I can actually do next": "action",
+        "What helps more people": "connection",
+        "What feels safer": "stability",
+        "What still feels true after I wait": "waiting",
+        "What my heart moves toward right now": "intuition"
+      },
+      "reflection": "Add a few words about why this feels close."
+    }
+  ]
+}
     "id": "feel",
     "number": 2,
     "title": "What You Feel First",
