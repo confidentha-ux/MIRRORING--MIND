@@ -1,6 +1,5 @@
 export const quests = [
   {
-  {
   "id": "begin",
   "number": 1,
   "title": "How You Begin",
