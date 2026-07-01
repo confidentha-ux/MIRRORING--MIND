@@ -241,7 +241,9 @@ export const quests = [
       "reflection": "Add a few words about why this feels close."
     }
   ]
-}
+},  
+{
+  "id": "feel",
     "id": "feel",
     "number": 2,
     "title": "What You Feel First",
