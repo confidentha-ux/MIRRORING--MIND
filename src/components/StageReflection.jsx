@@ -152,9 +152,30 @@ const beginningStyles = {
   }
 };
 
-function detectBeginningStyle(questResponses = {}) {
-  const text = Object.values(questResponses).join(" ").toLowerCase();
+function normalizeAnswer(answer) {
+  if (!answer) return "";
 
+  if (typeof answer === "string") return answer;
+
+  if (Array.isArray(answer)) {
+    return answer.join(" ");
+  }
+
+  if (typeof answer === "object") {
+    return (
+      answer.choice ||
+      answer.value ||
+      answer.answer ||
+      answer.selected ||
+      answer.text ||
+      ""
+    );
+  }
+
+  return String(answer);
+}
+
+function detectBeginningStyleFromStyleMap(quest, questResponses = {}) {
   const scores = {
     understanding: 0,
     action: 0,
@@ -164,34 +185,31 @@ function detectBeginningStyle(questResponses = {}) {
     intuition: 0
   };
 
-  const add = (key, words) => {
-    words.forEach((word) => {
-      if (text.includes(word)) scores[key] += 1;
-    });
-  };
+  quest?.questions?.forEach((question) => {
+    const answer = normalizeAnswer(questResponses[question.id]);
 
-  add("understanding", ["understand", "meaning", "context", "clear", "explain"]);
-  add("action", ["do", "act", "action", "fix", "move", "try"]);
-  add("connection", ["person", "face", "voice", "response", "someone", "other"]);
-  add("stability", ["steady", "safe", "control", "protect", "order", "stable"]);
-  add("waiting", ["pause", "wait", "time", "settle", "still"]);
-  add("intuition", [
-    "sense",
-    "signal",
-    "feel right",
-    "feel wrong",
-    "inside",
-    "intuition"
-  ]);
+    if (!answer || !question.styleMap) return;
 
-  const winner = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+    const style = question.styleMap[answer];
+
+    if (style && scores[style] !== undefined) {
+      scores[style] += 1;
+    }
+  });
+
+  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  const winner = sorted[0]?.[0];
 
   return beginningStyles[winner] || beginningStyles.understanding;
 }
 
 function FirstQuestReflection({ quest, responses, onContinue, onMap }) {
   const questResponses = responses?.[quest?.id] || {};
-  const style = detectBeginningStyle(questResponses);
+
+  const style = useMemo(
+    () => detectBeginningStyleFromStyleMap(quest, questResponses),
+    [quest, questResponses]
+  );
 
   useEffect(() => {
     saveQuestReflection("quest1", {
