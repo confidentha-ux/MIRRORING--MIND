@@ -1,5 +1,42 @@
 import { useEffect, useMemo, useState } from "react";
 
+const REFLECTIONS_KEY = "mirroring-mind-quest-reflections";
+
+function loadSavedReflections() {
+  try {
+    return JSON.parse(localStorage.getItem(REFLECTIONS_KEY)) || {};
+  } catch {
+    return {};
+  }
+}
+
+function saveQuestReflection(questKey, reflection) {
+  const current = loadSavedReflections();
+
+  localStorage.setItem(
+    REFLECTIONS_KEY,
+    JSON.stringify({
+      ...current,
+      [questKey]: reflection
+    })
+  );
+}
+
+function buildCachedContext(currentQuestIndex) {
+  const saved = loadSavedReflections();
+  const context = {};
+
+  Object.entries(saved).forEach(([key, value]) => {
+    const number = Number(key.replace("quest", ""));
+
+    if (number < currentQuestIndex + 1) {
+      context[key] = value;
+    }
+  });
+
+  return context;
+}
+
 const beginningStyles = {
   understanding: {
     name: "Understanding First",
@@ -138,16 +175,37 @@ function detectBeginningStyle(questResponses = {}) {
   add("connection", ["person", "face", "voice", "response", "someone", "other"]);
   add("stability", ["steady", "safe", "control", "protect", "order", "stable"]);
   add("waiting", ["pause", "wait", "time", "settle", "still"]);
-  add("intuition", ["sense", "signal", "feel right", "feel wrong", "inside", "intuition"]);
+  add("intuition", [
+    "sense",
+    "signal",
+    "feel right",
+    "feel wrong",
+    "inside",
+    "intuition"
+  ]);
 
   const winner = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
 
   return beginningStyles[winner] || beginningStyles.understanding;
 }
 
-function FirstQuestReflection({ quest, activeIndex, responses, onContinue, onMap }) {
+function FirstQuestReflection({ quest, responses, onContinue, onMap }) {
   const questResponses = responses?.[quest?.id] || {};
   const style = detectBeginningStyle(questResponses);
+
+  useEffect(() => {
+    saveQuestReflection("quest1", {
+      quest: "Quest I",
+      type: "beginningStyle",
+      title: style.name,
+      summary: style.summary,
+      pattern: style.feature,
+      strength: style.strengths.join(" "),
+      cost: style.watch.join(" "),
+      warmMirror: style.warmth,
+      carryQuestion: style.question
+    });
+  }, [style]);
 
   return (
     <main className={`screen stage-reflection-screen ${quest?.theme || ""}`}>
@@ -208,13 +266,14 @@ function FirstQuestReflection({ quest, activeIndex, responses, onContinue, onMap
   );
 }
 
-export default function StageReflection({
+function ClaudeQuestReflection({
   quest,
-  activeIndex = 0,
+  activeIndex,
   responses,
   onContinue,
   onMap
 }) {
+  const questKey = `quest${activeIndex + 1}`;
   const [reflection, setReflection] = useState(null);
   const [status, setStatus] = useState("loading");
   const [error, setError] = useState("");
@@ -224,22 +283,18 @@ export default function StageReflection({
     [responses, quest?.id]
   );
 
-  if (activeIndex === 0) {
-    return (
-      <FirstQuestReflection
-        quest={quest}
-        activeIndex={activeIndex}
-        responses={responses}
-        onContinue={onContinue}
-        onMap={onMap}
-      />
-    );
-  }
-
   useEffect(() => {
     let cancelled = false;
 
     async function loadReflection() {
+      const saved = loadSavedReflections();
+
+      if (saved[questKey]) {
+        setReflection(saved[questKey]);
+        setStatus("ready");
+        return;
+      }
+
       setStatus("loading");
       setError("");
 
@@ -254,24 +309,44 @@ export default function StageReflection({
             questTitle: quest?.title,
             questSpaceLabel: quest?.spaceLabel,
             questIntro: quest?.intro,
-            responses: questResponses
+            responses: questResponses,
+            cachedContext: buildCachedContext(activeIndex)
           })
         });
 
-         if (!response.ok) {
-  const errorData = await response.json().catch(() => null);
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => null);
 
-  throw new Error(
-    errorData?.detail ||
-      errorData?.error ||
-      `Reflection request failed with status ${response.status}`
-  );
-  }
+          throw new Error(
+            errorData?.detail ||
+              errorData?.error ||
+              `Reflection request failed with status ${response.status}`
+          );
+        }
 
         const data = await response.json();
 
+        const savedReflection = {
+          quest: `Quest ${activeIndex + 1}`,
+          type: "claudeReflection",
+          eyebrow: data?.eyebrow || `Quest ${activeIndex + 1} Reflection`,
+          title: data?.title || "A small reflection from this quest",
+          summary:
+            data?.summary ||
+            "Your answers suggest that this part of your inner reaction is worth noticing.",
+          pattern: data?.pattern || "",
+          protection: data?.protection || "",
+          cost: data?.cost || "",
+          warmMirror: data?.warmMirror || "",
+          carryQuestion:
+            data?.carryQuestion ||
+            "What did this quest help you notice that you might usually pass by?"
+        };
+
+        saveQuestReflection(questKey, savedReflection);
+
         if (!cancelled) {
-          setReflection(data);
+          setReflection(savedReflection);
           setStatus("ready");
         }
       } catch (err) {
@@ -287,7 +362,14 @@ export default function StageReflection({
     return () => {
       cancelled = true;
     };
-  }, [activeIndex, quest?.title, quest?.spaceLabel, quest?.intro, questResponses]);
+  }, [
+    activeIndex,
+    questKey,
+    quest?.title,
+    quest?.spaceLabel,
+    quest?.intro,
+    questResponses
+  ]);
 
   if (status === "loading") {
     return (
@@ -295,9 +377,7 @@ export default function StageReflection({
         <section className="reflection-letter soft-panel">
           <p className="eyebrow">Preparing your reflection</p>
           <h1>Reading what your answers may be showing.</h1>
-          <p className="lead">
-            This may take a quiet moment.
-          </p>
+          <p className="lead">This may take a quiet moment.</p>
         </section>
       </main>
     );
@@ -371,5 +451,34 @@ export default function StageReflection({
         </div>
       </section>
     </main>
+  );
+}
+
+export default function StageReflection({
+  quest,
+  activeIndex = 0,
+  responses,
+  onContinue,
+  onMap
+}) {
+  if (activeIndex === 0) {
+    return (
+      <FirstQuestReflection
+        quest={quest}
+        responses={responses}
+        onContinue={onContinue}
+        onMap={onMap}
+      />
+    );
+  }
+
+  return (
+    <ClaudeQuestReflection
+      quest={quest}
+      activeIndex={activeIndex}
+      responses={responses}
+      onContinue={onContinue}
+      onMap={onMap}
+    />
   );
 }
