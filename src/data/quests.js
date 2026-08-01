@@ -2,19 +2,17 @@ export const quests = [
   {
   "id": "begin",
   "number": 1,
-  "title": "How You Begin",
-  "motif": "First door",
+  "title": "What do you notice first?",
   "accent": "sage",
-  "purpose": "Notice your beginning style: understanding, action, connection, stability, waiting, or intuition.",
-  "intro": "Before a moment becomes clear, something in you usually moves first. This first quest helps you notice how you tend to begin.",
-  "reward": "You opened the first door. You noticed the first movement your mind may reach for.",
+  "purpose": "Notice your beginning style: understanding, action, connection, stability, or intuition.",
+  "intro": "The same moment, seen your way.",
+  "reward": "You noticed the first movement your mind reaches for.",
   "questions": [
     {
       "id": "begin-project",
       "prompt": "A new project arrives, and you need to choose a direction within a week. What do you do first?",
       "choices": [
         "Talk it through with someone",
-        "Pause and watch what becomes clearer",
         "Gather related examples and information",
         "Notice the direction you intuitively feel drawn to",
         "Check risks and possible failure points",
@@ -25,7 +23,6 @@ export const quests = [
         "Start with one small task": "action",
         "Talk it through with someone": "connection",
         "Check risks and possible failure points": "stability",
-        "Pause and watch what becomes clearer": "waiting",
         "Notice the direction you intuitively feel drawn to": "intuition"
       },
       "reflection": "Add a few words about why this feels close."
@@ -34,7 +31,6 @@ export const quests = [
       "id": "begin-wrong",
       "prompt": "Something you thought was right turns out to be wrong. What thought appears first?",
       "choices": [
-        "I pause before deciding what it means",
         "I want to understand where my judgment shifted",
         "I wonder what mood or signal I missed",
         "I wonder how other people are seeing this",
@@ -46,7 +42,6 @@ export const quests = [
         "I accept the fact and move to the next step": "action",
         "I wonder how other people are seeing this": "connection",
         "I think about how to avoid repeating it": "stability",
-        "I pause before deciding what it means": "waiting",
         "I wonder what mood or signal I missed": "intuition"
       },
       "reflection": "Add a few words about why this feels close."
@@ -56,7 +51,6 @@ export const quests = [
       "prompt": "You need to make an important choice, but the information is limited. What do you usually do?",
       "choices": [
         "Talk with someone I trust",
-        "Wait and watch the situation a little longer",
         "Keep looking until I understand enough",
         "Follow the direction that feels right",
         "Check what feels safest or most stable",
@@ -67,7 +61,6 @@ export const quests = [
         "Decide first and adjust later": "action",
         "Talk with someone I trust": "connection",
         "Check what feels safest or most stable": "stability",
-        "Wait and watch the situation a little longer": "waiting",
         "Follow the direction that feels right": "intuition"
       },
       "reflection": "Add a few words about why this feels close."
@@ -79,7 +72,6 @@ export const quests = [
         "Look for another interpretation or possibility",
         "Try again in a different way",
         "Look for the cause",
-        "Pause until the surprise settles",
         "Listen to another person's view",
         "Organize myself and steady the situation"
       ],
@@ -88,7 +80,6 @@ export const quests = [
         "Try again in a different way": "action",
         "Listen to another person's view": "connection",
         "Organize myself and steady the situation": "stability",
-        "Pause until the surprise settles": "waiting",
         "Look for another interpretation or possibility": "intuition"
       },
       "reflection": "Add a few words about why this feels close."
@@ -99,7 +90,6 @@ export const quests = [
       "choices": [
         "Notice the other person's feelings first",
         "Try to explain fully",
-        "Let time settle it before responding",
         "Protect my energy and keep things steady",
         "Do something to clear the situation",
         "Wonder why the misunderstanding happened"
@@ -109,7 +99,6 @@ export const quests = [
         "Do something to clear the situation": "action",
         "Notice the other person's feelings first": "connection",
         "Protect my energy and keep things steady": "stability",
-        "Let time settle it before responding": "waiting",
         "Wonder why the misunderstanding happened": "intuition"
       },
       "reflection": "Add a few words about why this feels close."
@@ -118,7 +107,6 @@ export const quests = [
       "id": "begin-stuck",
       "prompt": "A situation has stayed unresolved for days. How do you move?",
       "choices": [
-        "Step away and return after rest",
         "Try a completely different way",
         "Ask someone for help",
         "Revisit the definition and edges of the issue",
@@ -130,7 +118,6 @@ export const quests = [
         "Try a completely different way": "action",
         "Ask someone for help": "connection",
         "Create structure around what is still unresolved": "stability",
-        "Step away and return after rest": "waiting",
         "Keep searching because another way may exist": "intuition"
       },
       "reflection": "Add a few words about why this feels close."
@@ -143,7 +130,6 @@ export const quests = [
         "Understand concepts and principles first",
         "Start with the part that draws my attention",
         "Learn through someone with experience",
-        "Give myself time to absorb it slowly",
         "Look at the overall structure first"
       ],
       "styleMap": {
@@ -151,7 +137,6 @@ export const quests = [
         "Learn by doing": "action",
         "Learn through someone with experience": "connection",
         "Look at the overall structure first": "stability",
-        "Give myself time to absorb it slowly": "waiting",
         "Start with the part that draws my attention": "intuition"
       },
       "reflection": "Add a few words about why this feels close."
@@ -161,7 +146,6 @@ export const quests = [
       "prompt": "Which situation feels most uncomfortable?",
       "choices": [
         "Facing a very uncertain future",
-        "Being pushed to respond before I am ready",
         "Deciding before I fully understand",
         "Carrying all the responsibility alone",
         "Waiting when I cannot do anything",
@@ -172,7 +156,6 @@ export const quests = [
         "Waiting when I cannot do anything": "action",
         "Carrying all the responsibility alone": "connection",
         "Facing a very uncertain future": "stability",
-        "Being pushed to respond before I am ready": "waiting",
         "Not being able to explain why I acted": "intuition"
       },
       "reflection": "Add a few words about why this feels close."
@@ -185,15 +168,13 @@ export const quests = [
         "When something complex becomes clear",
         "When I solve something directly",
         "When I feel deeply connected with someone",
-        "When things move steadily",
-        "When I can stay with something without rushing"
+        "When things move steadily"
       ],
       "styleMap": {
         "When something complex becomes clear": "understanding",
         "When I solve something directly": "action",
         "When I feel deeply connected with someone": "connection",
         "When things move steadily": "stability",
-        "When I can stay with something without rushing": "waiting",
         "When I discover a new possibility": "intuition"
       },
       "reflection": "Add a few words about why this feels close."
@@ -204,7 +185,6 @@ export const quests = [
       "choices": [
         "Return to a steady routine",
         "Talk with someone",
-        "Let it calm with time",
         "Move and let action carry me",
         "Follow the feeling that keeps appearing",
         "Keep thinking it through"
@@ -214,7 +194,6 @@ export const quests = [
         "Move and let action carry me": "action",
         "Talk with someone": "connection",
         "Return to a steady routine": "stability",
-        "Let it calm with time": "waiting",
         "Follow the feeling that keeps appearing": "intuition"
       },
       "reflection": "Add a few words about why this feels close."
@@ -227,15 +206,13 @@ export const quests = [
         "What my heart moves toward right now",
         "What feels safer",
         "What feels most logical",
-        "What I can actually do next",
-        "What still feels true after I wait"
+        "What I can actually do next"
       ],
       "styleMap": {
         "What feels most logical": "understanding",
         "What I can actually do next": "action",
         "What helps more people": "connection",
         "What feels safer": "stability",
-        "What still feels true after I wait": "waiting",
         "What my heart moves toward right now": "intuition"
       },
       "reflection": "Add a few words about why this feels close."
@@ -243,15 +220,13 @@ export const quests = [
   ]
 },
 {
-  "id": "feel",
     "id": "feel",
     "number": 2,
-    "title": "What You Feel First",
-    "motif": "Second mirror",
+    "title": "What stays with you most?",
     "accent": "blue",
     "purpose": "Name the emotions that appear first, where they come from, and how long they stay.",
-    "intro": "A feeling often arrives before a full story does. This mirror invites you to name what appears first.",
-    "reward": "You turned on the second mirror. You found a few emotional words that may be close to your experience.",
+    "intro": "Some things quietly hold your attention.",
+    "reward": "You found a few words for what stayed with you.",
     "questions": [
       {
         "id": "pride-entry",
@@ -414,12 +389,11 @@ export const quests = [
   {
     "id": "interpret",
     "number": 3,
-    "title": "How You Interpret",
-    "motif": "Third room",
+    "title": "What guides your judgment?",
     "accent": "amber",
     "purpose": "Notice automatic thoughts and interpretations that appear after emotions are triggered.",
-    "intro": "After a feeling arrives, the mind often writes a sentence. This room lets you hear that sentence without becoming it.",
-    "reward": "You entered the third room. You noticed one inner sentence that tends to appear.",
+    "intro": "The same facts, weighed differently by each of us.",
+    "reward": "You noticed one inner sentence that tends to appear.",
     "questions": [
       {
         "id": "self-image",
@@ -564,12 +538,11 @@ export const quests = [
   {
     "id": "respond",
     "number": 4,
-    "title": "How You Respond",
-    "motif": "Opened drawer",
+    "title": "What keeps returning?",
     "accent": "sage",
     "purpose": "Trace one recent emotional moment: situation, feeling, body response, automatic thought, behavior, and relationship context.",
-    "intro": "One response is made of many small movements. This opened drawer lets you trace them without blame.",
-    "reward": "You opened a memory. You traced how one response moved through your body, thought, and action.",
+    "intro": "Some responses have come with you a long time.",
+    "reward": "You traced how one response moved through feeling, body, and action.",
     "questions": [
       {
         "id": "memory-scene",
@@ -721,12 +694,11 @@ export const quests = [
   {
     "id": "possibility",
     "number": 5,
-    "title": "What Else Could Be True",
-    "motif": "Fifth window",
+    "title": "What haven't you seen yet?",
     "accent": "blue",
     "purpose": "Look at the same memory from a slightly different angle, without forcing positivity.",
-    "intro": "A new angle does not erase the old one. This window simply lets one more possibility enter the room.",
-    "reward": "You opened a small window. You allowed one other possibility to appear.",
+    "intro": "One moment can hold more than one truth.",
+    "reward": "You allowed one other possibility to appear.",
     "questions": [
       {
         "id": "remember",
