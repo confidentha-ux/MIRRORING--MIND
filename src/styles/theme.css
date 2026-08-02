@@ -735,6 +735,41 @@ p {
   margin-top: 26px;
 }
 
+.situation-image {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 3 / 4;
+  margin: 0 0 26px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--line-soft);
+}
+
+.situation-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* keeps the darker scenes from fighting the light background */
+  opacity: 0.94;
+}
+
+/* a thin veil of the water tone, so illustrations sit inside the theme */
+.situation-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(234, 241, 241, 0.18) 0%,
+    rgba(157, 184, 187, 0.06) 55%,
+    rgba(234, 241, 241, 0.22) 100%
+  );
+  pointer-events: none;
+}
+
 .situation-label {
   margin-bottom: 22px;
 }
