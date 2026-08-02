@@ -133,9 +133,11 @@ export default function App() {
   if (journey.screen === "welcome") {
     return (
       <WelcomeScreen
-        hasSavedJourney={Boolean(savedJourney)}
-        onBegin={() => updateJourney({ screen: "prologue" })}
-        onResume={() => savedJourney && setJourney(savedJourney)}
+        onBegin={() =>
+          savedJourney
+            ? setJourney(savedJourney)
+            : updateJourney({ screen: "prologue" })
+        }
       />
     );
   }
@@ -146,7 +148,6 @@ export default function App() {
         onEnter={(choices) =>
           updateJourney({ screen: "map", prologueChoices: choices })
         }
-        onSkip={() => updateJourney({ screen: "map" })}
       />
     );
   }
