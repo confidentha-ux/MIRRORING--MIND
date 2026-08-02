@@ -22,6 +22,7 @@ export default function ReflectionCard({
 }) {
   const [synthesis, setSynthesis] = useState(null);
   const [status, setStatus] = useState("loading");
+  const [copyStatus, setCopyStatus] = useState("idle");
 
   // Situation 03 is the one that returns at the end.
   const firstChoice = prologueChoices?.[2];
@@ -71,6 +72,41 @@ export default function ReflectionCard({
     ["Response pattern", reflection.responsePattern],
     ["One sentence I can carry today", reflection.carrySentence]
   ];
+
+  function buildCopyText() {
+    const lines = ["Today's Mirror — Mirroring Mind", ""];
+
+    if (synthesis) {
+      lines.push(synthesis.title, "");
+      lines.push("What becomes visible", synthesis.acrossTheFive, "");
+      lines.push("How it shaped your judgment", synthesis.whatItDid, "");
+      lines.push("The question that remains", synthesis.remainingQuestion, "");
+    }
+
+    rows.forEach(([label, text]) => {
+      lines.push(`${label}: ${text}`);
+    });
+
+    if (hasSituation) {
+      lines.push("", "The choice you met twice");
+      lines.push(`At first: ${firstChoice}`);
+      lines.push(`After the five questions: ${lastChoice}`);
+      if (finalReason) lines.push(`What led you there: ${finalReason}`);
+    }
+
+    return lines.join("\n");
+  }
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(buildCopyText());
+      setCopyStatus("copied");
+      setTimeout(() => setCopyStatus("idle"), 2000);
+    } catch {
+      setCopyStatus("failed");
+      setTimeout(() => setCopyStatus("idle"), 2000);
+    }
+  }
 
   return (
     <main className="screen final-screen">
@@ -156,7 +192,16 @@ export default function ReflectionCard({
           </section>
         )}
 
-        <div className="button-row">
+        <div className="button-row button-row-stacked">
+          {status !== "loading" && (
+            <button className="secondary-button" onClick={handleCopy} type="button">
+              {copyStatus === "copied"
+                ? "Copied"
+                : copyStatus === "failed"
+                ? "Couldn't copy"
+                : "Copy this reflection"}
+            </button>
+          )}
           <button className="primary-button" onClick={onRestart}>
             Begin again
           </button>
