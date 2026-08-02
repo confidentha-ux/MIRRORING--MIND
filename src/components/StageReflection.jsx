@@ -112,25 +112,6 @@ const beginningStyles = {
     question:
       "What kind of steadiness helps you feel safe enough to see clearly?"
   },
-  waiting: {
-    name: "Waiting First",
-    summary: "You begin by pausing.",
-    feature:
-      "This style gives the moment time before deciding what it means or what to do.",
-    strengths: [
-      "You do not rush.",
-      "You let things settle.",
-      "You may see what others miss."
-    ],
-    watch: [
-      "You may delay your own voice.",
-      "You may wait until the moment has passed."
-    ],
-    warmth:
-      "Your mind may need time before it trusts the next step.",
-    question:
-      "What becomes clearer when you give yourself a little time?"
-  },
   intuition: {
     name: "Intuition First",
     summary: "You begin with a quiet inner signal.",
@@ -181,7 +162,6 @@ function detectBeginningStyleFromStyleMap(quest, questResponses = {}) {
     action: 0,
     connection: 0,
     stability: 0,
-    waiting: 0,
     intuition: 0
   };
 
@@ -325,7 +305,6 @@ function ClaudeQuestReflection({
           body: JSON.stringify({
             questIndex: activeIndex,
             questTitle: quest?.title,
-            questSpaceLabel: quest?.spaceLabel,
             questIntro: quest?.intro,
             responses: questResponses,
             cachedContext: buildCachedContext(activeIndex)
@@ -384,7 +363,6 @@ function ClaudeQuestReflection({
     activeIndex,
     questKey,
     quest?.title,
-    quest?.spaceLabel,
     quest?.intro,
     questResponses
   ]);
