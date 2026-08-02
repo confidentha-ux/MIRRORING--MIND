@@ -8,6 +8,7 @@ export const SITUATIONS = [
   {
     id: 1,
     label: "Situation 01",
+    image: "/situation1.jpg",
     scene: [
       "A friend you haven't seen in a while. Easy talk, at first.",
       "Then the quiet, and a cup turning in their hands."
@@ -30,11 +31,12 @@ export const SITUATIONS = [
   {
     id: 2,
     label: "Situation 02",
+    image: "/situation2.jpg",
     scene: [
-      "Months of work. The final presentation just ended.",
-      "In the room: the client, the people who approved it, your team \u2014 and you, in the middle."
+      "The quarter's numbers are on the screen. Everyone has seen them.",
+      "The client, the people who approved this, your team \u2014 and you, in the middle."
     ],
-    quote: "\u201CI'm sorry, but this isn't quite the direction we were hoping for.\u201D",
+    quote: "\u201CThis isn't what we were told to expect.\u201D",
     sceneAfter: [
       "No one speaks.",
       "The room turns your way."
@@ -52,6 +54,7 @@ export const SITUATIONS = [
   {
     id: 3,
     label: "Situation 03",
+    image: "/situation3.jpg",
     scene: [
       "Late afternoon. Where you are isn't bad. Comfortable, even.",
       "Only lately, something keeps knocking \u2014 that there might be more past the comfortable part.",
@@ -134,6 +137,12 @@ export default function Prologue({ onEnter, onSkip }) {
         </div>
 
         <p className="eyebrow situation-label">{sit.label}</p>
+
+        {sit.image && (
+          <div className="situation-image">
+            <img src={sit.image} alt="" loading="lazy" />
+          </div>
+        )}
 
         <div className="situation-scene">
           {sit.scene.map((line, index) => (
