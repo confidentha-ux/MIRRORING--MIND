@@ -691,6 +691,207 @@ p {
   content: none;
 }
 
+/* ---------- prologue & situation revisit ---------- */
+
+.prologue-screen {
+  justify-content: center;
+}
+
+.prologue-door {
+  align-items: center;
+  text-align: center;
+}
+
+.prologue-title {
+  font-size: clamp(1.9rem, 6.5vw, 2.5rem);
+  font-style: italic;
+  line-height: 1.1;
+  margin: 16px 0 30px;
+}
+
+.prologue-title::after {
+  content: attr(data-reflect);
+  display: block;
+  transform: scaleY(-1);
+  opacity: 0.13;
+  margin-top: 3px;
+  -webkit-mask-image: linear-gradient(#000, transparent 70%);
+  mask-image: linear-gradient(#000, transparent 70%);
+  pointer-events: none;
+}
+
+.prologue-lines p {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.prologue-turn {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  margin-top: 26px;
+}
+
+.situation-label {
+  margin-bottom: 22px;
+}
+
+.situation-scene p {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.situation-scene-after {
+  margin-top: 20px;
+}
+
+.situation-scene-after p {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.situation-quote {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  padding: 4px 0 4px 18px;
+  border-left: 2px solid var(--gold);
+  margin: 22px 0;
+}
+
+.situation-question {
+  font-size: clamp(1.3rem, 4.2vw, 1.55rem);
+  line-height: 1.3;
+  margin-top: 30px;
+}
+
+.revisit-screen {
+  justify-content: flex-start;
+}
+
+.revisit-recap {
+  margin-top: 16px;
+  opacity: 0.72;
+}
+
+.revisit-recap p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.revisit-previous {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: rgba(157, 184, 187, 0.16);
+}
+
+.revisit-previous .eyebrow {
+  margin-bottom: 6px;
+}
+
+.revisit-previous p:last-child {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.revisit-reason {
+  margin-top: 26px;
+}
+
+.prologue-reveal-lead {
+  margin-top: 14px;
+}
+
+.prologue-reveal-note {
+  margin-top: 24px;
+}
+
+.prologue-core {
+  max-width: none;
+  text-align: left;
+}
+
+.prologue-core::before {
+  left: 0;
+  transform: none;
+}
+
+/* ---------- AI synthesis on the final screen ---------- */
+
+.synthesis-loading {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.synthesis-block {
+  margin-top: 24px;
+  padding: 24px 22px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line-soft);
+}
+
+.synthesis-title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+
+.synthesis-block .reflection-section p {
+  font-size: 0.95rem;
+  line-height: 1.72;
+}
+
+/* ---------- situation block on the final screen ---------- */
+
+.situation-block {
+  margin-top: 34px;
+  padding-top: 28px;
+  position: relative;
+}
+
+.situation-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--water), transparent);
+}
+
+.situation-block-intro {
+  margin: 10px 0 4px;
+}
+
+.situation-block-note {
+  margin-top: 20px;
+}
+
+.situation-block-close {
+  margin-top: 16px;
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 480px) {
