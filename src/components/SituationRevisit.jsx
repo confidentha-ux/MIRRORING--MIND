@@ -29,12 +29,27 @@ export default function SituationRevisit({
         ))}
       </div>
 
+      <p className="lead revisit-intro">
+        You're looking at this moment again, after going through this lens.
+        Choose whatever catches you first this time — it doesn't need to
+        match what you chose before.
+      </p>
+
       {firstChoice && (
         <div className="revisit-previous">
-          <p className="eyebrow">What you chose the first time</p>
-          <p>{firstChoice}</p>
+          {situation.image && (
+            <div className="situation-image situation-image-small">
+              <img src={situation.image} alt="" loading="lazy" />
+            </div>
+          )}
+          <div className="revisit-previous-text">
+            <p className="eyebrow">What you chose the first time</p>
+            <p>{firstChoice}</p>
+          </div>
         </div>
       )}
+
+      <p className="eyebrow revisit-choose-label">What catches you now</p>
 
       <div className="choice-list">
         {situation.options.map((option) => (
