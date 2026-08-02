@@ -26,7 +26,9 @@ export default function QuestMap({ unlockedIndex = 0, onSelect, onReset }) {
               onClick={() => isOpen && onSelect(index)}
               disabled={!isOpen}
             >
-              <span className="space-roman">{ROMAN[index]}</span>
+              <span className="space-roman" data-roman={ROMAN[index]}>
+                {ROMAN[index]}
+              </span>
               <span className="space-title">{quest.title}</span>
               <span className="space-text">{quest.intro}</span>
             </button>
