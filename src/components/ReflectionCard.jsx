@@ -17,8 +17,7 @@ export default function ReflectionCard({
   revisits = {},
   prologueChoices = {},
   finalReason = "",
-  onRestart,
-  onMap
+  onRestart
 }) {
   const [synthesis, setSynthesis] = useState(null);
   const [status, setStatus] = useState("loading");
@@ -204,9 +203,6 @@ export default function ReflectionCard({
           )}
           <button className="primary-button" onClick={onRestart}>
             Begin again
-          </button>
-          <button className="secondary-button" onClick={onMap}>
-            Return to the questions
           </button>
         </div>
       </section>
