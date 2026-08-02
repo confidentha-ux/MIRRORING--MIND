@@ -3,7 +3,7 @@ import { appCopy } from "../data/prompts";
 
 const ROMAN = ["I", "II", "III", "IV", "V"];
 
-export default function QuestMap({ unlockedIndex = 0, onSelect, onReset }) {
+export default function QuestMap({ unlockedIndex = 0, onSelect }) {
   return (
     <main className="screen map-screen">
       <section className="map-intro">
@@ -35,12 +35,6 @@ export default function QuestMap({ unlockedIndex = 0, onSelect, onReset }) {
           );
         })}
       </section>
-
-      <div className="map-actions">
-        <button className="secondary-button" onClick={onReset}>
-          Begin again
-        </button>
-      </div>
     </main>
   );
 }
