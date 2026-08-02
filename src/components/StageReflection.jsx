@@ -252,9 +252,6 @@ function FirstQuestReflection({ quest, responses, onContinue, onMap }) {
         </div>
 
         <div className="button-row">
-          <button className="secondary-button" onClick={onMap}>
-            Return to the quests
-          </button>
           <button className="primary-button" onClick={onContinue}>
             Continue gently
           </button>
@@ -391,9 +388,6 @@ function ClaudeQuestReflection({
           <p className="soft-note">{error}</p>
 
           <div className="button-row">
-            <button className="secondary-button" onClick={onMap}>
-              Return to the quests
-            </button>
             <button className="primary-button" onClick={onContinue}>
               Continue gently
             </button>
@@ -438,9 +432,6 @@ function ClaudeQuestReflection({
         </div>
 
         <div className="button-row">
-          <button className="secondary-button" onClick={onMap}>
-            Return to the quests
-          </button>
           <button className="primary-button" onClick={onContinue}>
             Continue gently
           </button>
