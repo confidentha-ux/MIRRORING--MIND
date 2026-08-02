@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { quests } from "./data/quests";
+import Prologue from "./components/Prologue";
+import SituationRevisit, { REVISIT_MAP } from "./components/SituationRevisit";
 import WelcomeScreen from "./components/WelcomeScreen";
 import QuestMap from "./components/QuestMap";
 import QuestIntro from "./components/QuestIntro";
@@ -16,7 +18,13 @@ const initialState = {
   questIndex: 0,
   questionIndex: 0,
   unlockedIndex: 0,
-  responses: {}
+  responses: {},
+  // situation choices made in the prologue, keyed 0/1/2
+  prologueChoices: {},
+  // choices made when a situation comes back, keyed by lens index
+  revisits: {},
+  // the reason written on the final revisit
+  finalReason: ""
 };
 
 export default function App() {
@@ -92,9 +100,25 @@ export default function App() {
     updateJourney({ screen: "intro" });
   }
 
+  // after the reward, the matching situation comes back
   function continueFromReward() {
-    if (journey.questIndex >= quests.length - 1) {
-      updateJourney({ screen: "final" });
+    updateJourney({ screen: "revisit" });
+  }
+
+  function continueFromRevisit({ choice, reason }) {
+    const isLastLens = journey.questIndex >= quests.length - 1;
+
+    const nextRevisits = {
+      ...journey.revisits,
+      [journey.questIndex]: choice
+    };
+
+    if (isLastLens) {
+      updateJourney({
+        screen: "final",
+        revisits: nextRevisits,
+        finalReason: reason || ""
+      });
       return;
     }
 
@@ -102,7 +126,8 @@ export default function App() {
       screen: "intro",
       questIndex: journey.questIndex + 1,
       questionIndex: 0,
-      unlockedIndex: Math.max(journey.unlockedIndex, journey.questIndex + 1)
+      unlockedIndex: Math.max(journey.unlockedIndex, journey.questIndex + 1),
+      revisits: nextRevisits
     });
   }
 
@@ -110,8 +135,19 @@ export default function App() {
     return (
       <WelcomeScreen
         hasSavedJourney={Boolean(savedJourney)}
-        onBegin={() => updateJourney({ screen: "map" })}
+        onBegin={() => updateJourney({ screen: "prologue" })}
         onResume={() => savedJourney && setJourney(savedJourney)}
+      />
+    );
+  }
+
+  if (journey.screen === "prologue") {
+    return (
+      <Prologue
+        onEnter={(choices) =>
+          updateJourney({ screen: "map", prologueChoices: choices })
+        }
+        onSkip={() => updateJourney({ screen: "map" })}
       />
     );
   }
@@ -182,9 +218,26 @@ export default function App() {
     );
   }
 
+  if (journey.screen === "revisit") {
+    const situationIndex = REVISIT_MAP[journey.questIndex];
+
+    return (
+      <SituationRevisit
+        lensIndex={journey.questIndex}
+        firstChoice={journey.prologueChoices?.[situationIndex]}
+        isFinal={journey.questIndex === quests.length - 1}
+        onContinue={continueFromRevisit}
+      />
+    );
+  }
+
   return (
     <ReflectionCard
       reflection={reflection}
+      responses={journey.responses}
+      revisits={journey.revisits}
+      prologueChoices={journey.prologueChoices}
+      finalReason={journey.finalReason}
       onRestart={resetJourney}
       onMap={() => updateJourney({ screen: "map" })}
     />
