@@ -218,15 +218,17 @@ p {
   margin-top: 20px;
 }
 
-/* the reflection: name mirrored on the surface */
+/* the reflection: name mirrored on the surface, with color and ripple */
 .welcome-screen h1::after {
   content: attr(data-reflect);
   display: block;
   transform: scaleY(-1);
-  opacity: 0.15;
   margin-top: 3px;
-  -webkit-mask-image: linear-gradient(#000, transparent 72%);
-  mask-image: linear-gradient(#000, transparent 72%);
+  color: var(--ink);
+  opacity: 0.36;
+  filter: url(#water-ripple);
+  -webkit-mask-image: linear-gradient(#000, transparent 66%);
+  mask-image: linear-gradient(#000, transparent 66%);
   pointer-events: none;
 }
 
@@ -722,10 +724,12 @@ p {
   content: attr(data-reflect);
   display: block;
   transform: scaleY(-1);
-  opacity: 0.13;
   margin-top: 3px;
-  -webkit-mask-image: linear-gradient(#000, transparent 70%);
-  mask-image: linear-gradient(#000, transparent 70%);
+  color: var(--ink);
+  opacity: 0.32;
+  filter: url(#water-ripple);
+  -webkit-mask-image: linear-gradient(#000, transparent 64%);
+  mask-image: linear-gradient(#000, transparent 64%);
   pointer-events: none;
 }
 
