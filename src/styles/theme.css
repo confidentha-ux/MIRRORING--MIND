@@ -185,6 +185,17 @@ p {
   margin-top: 26px;
 }
 
+.button-row-stacked {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button-row-stacked .primary-button,
+.button-row-stacked .secondary-button {
+  width: 100%;
+  text-align: center;
+}
+
 .split-row {
   justify-content: space-between;
   align-items: center;
@@ -542,6 +553,19 @@ p {
 }
 
 /* ---------- progress ---------- */
+
+.quest-progress {
+  margin-bottom: 10px;
+}
+
+.quest-progress-count {
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
 
 .progress-trail {
   display: flex;
