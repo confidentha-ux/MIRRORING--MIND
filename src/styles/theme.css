@@ -425,6 +425,15 @@ p {
   margin-bottom: 12px;
 }
 
+.quest-lead-in {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
 .question-card h1 {
   font-size: clamp(1.35rem, 4.2vw, 1.6rem);
   line-height: 1.28;
