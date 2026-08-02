@@ -9,40 +9,35 @@ export const SITUATIONS = [
     id: 1,
     label: "Situation 01",
     scene: [
-      "You're sitting across from a friend you haven't seen in a while.",
-      "It starts easy — small talk, catching up.",
-      "Then, at some point, they go quiet.",
-      "They turn their cup in their hands for a moment before speaking."
+      "A friend you haven't seen in a while. Easy talk, at first.",
+      "Then the quiet, and a cup turning in their hands."
     ],
-    quote: "\u201CI'm sorry to ask \u2014 but could you help me, just this once?\u201D",
+    quote: "\u201CI'm sorry to ask\u2026 but could you help me, just this once?\u201D",
     sceneAfter: [
-      "You don't have much room right now either. Things are already piling up, and you're tired.",
-      "Helping could unsettle your own plans. Saying no could leave them to carry this alone.",
-      "They don't say anything more. They're waiting for your answer."
+      "You don't have much left in you either.",
+      "They're waiting."
     ],
     question: "What catches you first in this moment?",
     options: [
-      "How long they must have hesitated before asking",
-      "How much room I actually have left right now",
-      "What it would leave between us if I said no",
-      "How much my own weeks would shift if I said yes",
-      "Whether I have to answer right this second",
-      "That my chest already felt heavy the moment they asked"
+      "How long they hesitated before asking",
+      "How little I have left to give right now",
+      "What saying no would leave between us",
+      "What saying yes would cost my own weeks",
+      "Whether I have to answer right now",
+      "That my chest went heavy the moment they asked"
     ]
   },
   {
     id: 2,
     label: "Situation 02",
     scene: [
-      "You're the one holding a project together in the middle.",
-      "The final presentation has just ended — months of work behind it.",
-      "In the room: the client who was waiting for this, the people above you who approved it, the team who built it, and you, somewhere in between."
+      "Months of work. The final presentation just ended.",
+      "In the room: the client, the people who approved it, your team \u2014 and you, in the middle."
     ],
     quote: "\u201CI'm sorry, but this isn't quite the direction we were hoping for.\u201D",
     sceneAfter: [
-      "The room goes still. The presenter flips back through the slides, thrown.",
-      "Your team glances at each other. No one above you says anything.",
-      "And you realize the person who probably has to speak first is you. Slowly, the room turns your way."
+      "No one speaks.",
+      "The room turns your way."
     ],
     question: "What rises in you first?",
     options: [
@@ -58,18 +53,17 @@ export const SITUATIONS = [
     id: 3,
     label: "Situation 03",
     scene: [
-      "Late afternoon. You stop what you're doing and look out the window.",
-      "Where you are isn't bad. It's comfortable, even.",
-      "It's only that lately, something keeps knocking — the thought that there might be more past the comfortable part.",
-      "And just now, three possibilities have opened in front of you."
+      "Late afternoon. Where you are isn't bad. Comfortable, even.",
+      "Only lately, something keeps knocking \u2014 that there might be more past the comfortable part.",
+      "Three possibilities have opened in front of you."
     ],
     quote: null,
     sceneAfter: [],
     question: "Facing the three, where do you move first?",
     options: [
-      "Move to a different seat where I am \u2014 more standing, same pay",
-      "Move somewhere entirely new \u2014 work I've never done, but it pays more",
-      "Hold both for now \u2014 stay where I am and make the next opening myself"
+      "A different seat here \u2014 more standing, same pay",
+      "Somewhere entirely new \u2014 unfamiliar work, better pay",
+      "Neither yet \u2014 stay, and make the next opening myself"
     ]
   }
 ];
