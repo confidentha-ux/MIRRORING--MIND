@@ -1,6 +1,6 @@
 import ProgressTrail from "./ProgressTrail";
 
-export default function RewardCard({ quest, quests, activeIndex, isFinalQuest, onContinue, onMap }) {
+export default function RewardCard({ quest, quests, activeIndex, isFinalQuest, onContinue }) {
   return (
     <main className={`screen quest-screen ${quest.accent}`}>
       <ProgressTrail quests={quests} activeIndex={activeIndex} questionIndex={0} questionCount={0} />
@@ -14,7 +14,6 @@ export default function RewardCard({ quest, quests, activeIndex, isFinalQuest, o
           <button className="primary-button" onClick={onContinue}>
             {isFinalQuest ? "Open Today's Mirror" : "Continue to the next space"}
           </button>
-          <button className="secondary-button" onClick={onMap}>Return to map</button>
         </div>
       </section>
     </main>
