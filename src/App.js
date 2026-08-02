@@ -4,7 +4,6 @@ import Prologue from "./components/Prologue";
 import SituationRevisit, { REVISIT_MAP } from "./components/SituationRevisit";
 import WelcomeScreen from "./components/WelcomeScreen";
 import QuestMap from "./components/QuestMap";
-import QuestIntro from "./components/QuestIntro";
 import QuestionCard from "./components/QuestionCard";
 import StageReflection from "./components/StageReflection";
 import RewardCard from "./components/RewardCard";
@@ -60,7 +59,7 @@ export default function App() {
 
   function openQuest(index) {
     updateJourney({
-      screen: "intro",
+      screen: "question",
       questIndex: index,
       questionIndex: 0
     });
@@ -97,7 +96,7 @@ export default function App() {
       return;
     }
 
-    updateJourney({ screen: "intro" });
+    updateJourney({ screen: "map" });
   }
 
   // after the reward, the matching situation comes back
@@ -123,7 +122,7 @@ export default function App() {
     }
 
     updateJourney({
-      screen: "intro",
+      screen: "question",
       questIndex: journey.questIndex + 1,
       questionIndex: 0,
       unlockedIndex: Math.max(journey.unlockedIndex, journey.questIndex + 1),
@@ -158,19 +157,6 @@ export default function App() {
         quests={quests}
         unlockedIndex={journey.unlockedIndex}
         onSelect={openQuest}
-        onReset={resetJourney}
-      />
-    );
-  }
-
-  if (journey.screen === "intro") {
-    return (
-      <QuestIntro
-        quest={activeQuest}
-        quests={quests}
-        activeIndex={journey.questIndex}
-        onStart={() => updateJourney({ screen: "question", questionIndex: 0 })}
-        onMap={() => updateJourney({ screen: "map" })}
       />
     );
   }
