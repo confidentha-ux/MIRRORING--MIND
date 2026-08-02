@@ -1,6 +1,6 @@
 import { appCopy } from "../data/prompts";
 
-export default function WelcomeScreen({ onBegin, hasSavedJourney, onResume }) {
+export default function WelcomeScreen({ onBegin }) {
   return (
     <main className="screen welcome-screen">
       <section className="welcome-letter">
@@ -20,12 +20,6 @@ export default function WelcomeScreen({ onBegin, hasSavedJourney, onResume }) {
           <button className="primary-button" onClick={onBegin}>
             Begin gently
           </button>
-
-          {hasSavedJourney && (
-            <button className="secondary-button" onClick={onResume}>
-              Return to my journey
-            </button>
-          )}
         </div>
       </section>
     </main>
