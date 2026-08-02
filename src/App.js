@@ -226,7 +226,6 @@ export default function App() {
       prologueChoices={journey.prologueChoices}
       finalReason={journey.finalReason}
       onRestart={resetJourney}
-      onMap={() => updateJourney({ screen: "map" })}
     />
   );
 }
