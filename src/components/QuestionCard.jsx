@@ -45,6 +45,9 @@ export default function QuestionCard({
       />
       <section className="quest-card question-card">
         <p className="eyebrow">{quest.title}</p>
+        {questionIndex === 0 && quest.intro && (
+          <p className="quest-lead-in">{quest.intro}</p>
+        )}
         <h1>{question.prompt}</h1>
         {!isTextOnly && (
           <div className="choice-list" role="list">
