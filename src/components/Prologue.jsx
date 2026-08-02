@@ -73,7 +73,7 @@ export const SITUATIONS = [
 
 // ────────────────────────────────────────────────────────────────
 
-export default function Prologue({ onEnter, onSkip }) {
+export default function Prologue({ onEnter }) {
   const [phase, setPhase] = useState("door");
   const [current, setCurrent] = useState(0);
   const [choices, setChoices] = useState({});
@@ -116,11 +116,6 @@ export default function Prologue({ onEnter, onSkip }) {
           <button className="primary-button" onClick={() => setPhase("situations")}>
             Begin
           </button>
-          {onSkip && (
-            <button className="text-button" onClick={onSkip}>
-              Skip for now
-            </button>
-          )}
         </div>
       </main>
     );
