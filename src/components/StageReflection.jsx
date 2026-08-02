@@ -1,5 +1,30 @@
 import { useEffect, useMemo, useState } from "react";
 
+function CopyButton({ getText }) {
+  const [status, setStatus] = useState("idle");
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(getText());
+      setStatus("copied");
+      setTimeout(() => setStatus("idle"), 2000);
+    } catch {
+      setStatus("failed");
+      setTimeout(() => setStatus("idle"), 2000);
+    }
+  }
+
+  return (
+    <button className="secondary-button" onClick={handleCopy} type="button">
+      {status === "copied"
+        ? "Copied"
+        : status === "failed"
+        ? "Couldn't copy"
+        : "Copy this reflection"}
+    </button>
+  );
+}
+
 const REFLECTIONS_KEY = "mirroring-mind-quest-reflections";
 
 function loadSavedReflections() {
@@ -251,7 +276,30 @@ function FirstQuestReflection({ quest, responses, onContinue, onMap }) {
           <p>{style.question}</p>
         </div>
 
-        <div className="button-row">
+        <div className="button-row button-row-stacked">
+          <CopyButton
+            getText={() =>
+              [
+                `Quest I Reflection — ${style.name}`,
+                style.summary,
+                "",
+                "What this style is like",
+                style.feature,
+                "",
+                "What this gives you",
+                ...style.strengths.map((item) => `- ${item}`),
+                "",
+                "What to watch gently",
+                ...style.watch.map((item) => `- ${item}`),
+                "",
+                "A warm mirror",
+                style.warmth,
+                "",
+                "A question to carry",
+                style.question
+              ].join("\n")
+            }
+          />
           <button className="primary-button" onClick={onContinue}>
             Continue gently
           </button>
@@ -431,7 +479,32 @@ function ClaudeQuestReflection({
           <p>{reflection?.carryQuestion}</p>
         </div>
 
-        <div className="button-row">
+        <div className="button-row button-row-stacked">
+          <CopyButton
+            getText={() =>
+              [
+                `${reflection?.eyebrow} — ${reflection?.title}`,
+                reflection?.summary,
+                "",
+                "What your answers may be showing",
+                reflection?.pattern,
+                "",
+                "What this may protect",
+                reflection?.protection,
+                "",
+                "What it may make harder",
+                reflection?.cost,
+                "",
+                "A warm mirror",
+                reflection?.warmMirror,
+                "",
+                "A question to carry",
+                reflection?.carryQuestion
+              ]
+                .filter(Boolean)
+                .join("\n")
+            }
+          />
           <button className="primary-button" onClick={onContinue}>
             Continue gently
           </button>
