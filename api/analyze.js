@@ -85,6 +85,25 @@ function fallbackReflection(questIndex) {
   };
 }
 
+// Claude sometimes wraps JSON in ```json fences or adds a short preamble
+// even when told not to. This strips both before parsing.
+function extractJson(text) {
+  let cleaned = text.trim();
+
+  const fenced = cleaned.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  if (fenced) {
+    cleaned = fenced[1].trim();
+  }
+
+  const firstBrace = cleaned.indexOf("{");
+  const lastBrace = cleaned.lastIndexOf("}");
+  if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+    cleaned = cleaned.slice(firstBrace, lastBrace + 1);
+  }
+
+  return cleaned;
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -191,16 +210,16 @@ Do not include explanation outside JSON.
     }
 
     const data = await claudeResponse.json();
-    const text = data?.content?.[0]?.text || "";
+    const rawText = data?.content?.[0]?.text || "";
 
     let parsed;
 
     try {
-      parsed = JSON.parse(text);
+      parsed = JSON.parse(extractJson(rawText));
     } catch {
       return res.status(500).json({
         error: "Claude returned invalid JSON",
-        raw: text
+        raw: rawText
       });
     }
 
