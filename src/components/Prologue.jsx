@@ -15,13 +15,13 @@ export const SITUATIONS = [
     ],
     quote: "\u201CI'm sorry to ask\u2026 but could you help me, just this once?\u201D",
     sceneAfter: [
-      "You don't have much left in you either.",
+      "You don't have much to spare right now either.",
       "They're waiting."
     ],
     question: "What catches you first in this moment?",
     options: [
       "How long they hesitated before asking",
-      "How little I have left to give right now",
+      "How much I actually have left to give",
       "What saying no would leave between us",
       "What saying yes would cost my own weeks",
       "Whether I have to answer right now",
@@ -57,12 +57,12 @@ export const SITUATIONS = [
     image: "/situation3.jpg",
     scene: [
       "Late afternoon. Where you are isn't bad. Comfortable, even.",
-      "Only lately, something keeps knocking \u2014 that there might be more past the comfortable part.",
+      "Only lately, a thought keeps knocking \u2014 that there might be more past the comfortable part.",
       "Three possibilities have opened in front of you."
     ],
     quote: null,
     sceneAfter: [],
-    question: "Facing the three, where do you move first?",
+    question: "With these three in front of you, where do you move first?",
     options: [
       "A different seat here \u2014 more standing, same pay",
       "Somewhere entirely new \u2014 unfamiliar work, better pay",
