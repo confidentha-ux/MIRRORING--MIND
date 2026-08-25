@@ -870,6 +870,15 @@ p {
   justify-content: flex-start;
 }
 
+.revisit-emphasis {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 14px 0;
+}
+
 .revisit-intro {
   margin-top: 18px;
 }
