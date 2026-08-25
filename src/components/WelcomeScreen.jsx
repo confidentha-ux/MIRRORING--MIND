@@ -78,6 +78,10 @@ export default function WelcomeScreen({ onBegin }) {
 
         <h2 className="landing-core">{appCopy.landingCore}</h2>
 
+        {appCopy.landingCoreSecond && (
+          <p className="landing-core-second">{appCopy.landingCoreSecond}</p>
+        )}
+
         <div className="welcome-intro">
           {appCopy.landingIntro.map((line, index) =>
             line ? <p key={index}>{line}</p> : <div key={index} className="soft-break" />
