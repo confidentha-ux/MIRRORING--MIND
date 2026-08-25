@@ -233,7 +233,7 @@ function FirstQuestReflection({ quest, responses, onContinue, onMap }) {
         </div>
 
         <div className="reflection-section">
-          <h2>What to watch gently</h2>
+          <h2>What to keep an eye on</h2>
           <ul>
             {style.watch.map((item) => (
               <li key={item}>{item}</li>
@@ -242,7 +242,7 @@ function FirstQuestReflection({ quest, responses, onContinue, onMap }) {
         </div>
 
         <div className="reflection-section warm-mirror">
-          <h2>One way to hold this</h2>
+          <h2>One way to work with this</h2>
           <p>{style.warmth}</p>
         </div>
 
@@ -253,7 +253,7 @@ function FirstQuestReflection({ quest, responses, onContinue, onMap }) {
 
         <div className="button-row">
           <button className="primary-button" onClick={onContinue}>
-            Continue gently
+            Continue
           </button>
         </div>
       </section>
@@ -389,7 +389,7 @@ function ClaudeQuestReflection({
 
           <div className="button-row">
             <button className="primary-button" onClick={onContinue}>
-              Continue gently
+              Continue
             </button>
           </div>
         </section>
@@ -422,7 +422,7 @@ function ClaudeQuestReflection({
         </div>
 
         <div className="reflection-section warm-mirror">
-          <h2>One way to hold this</h2>
+          <h2>One way to work with this</h2>
           <p>{reflection?.warmMirror}</p>
         </div>
 
@@ -433,7 +433,7 @@ function ClaudeQuestReflection({
 
         <div className="button-row">
           <button className="primary-button" onClick={onContinue}>
-            Continue gently
+            Continue
           </button>
         </div>
       </section>
