@@ -10,22 +10,22 @@ export const SITUATIONS = [
     label: "Situation 01",
     image: "/situation1.jpg",
     scene: [
-      "A friend you haven't seen in a while. Easy talk, at first.",
-      "Then the quiet, and a cup turning in their hands."
+      "A friend you haven't seen in a while. Easy conversation, at first.",
+      "Then they grow quiet, turning a cup in their hands."
     ],
     quote: "\u201CI'm sorry to ask\u2026 but could you help me, just this once?\u201D",
     sceneAfter: [
       "You don't have much to spare right now either.",
       "They're waiting."
     ],
-    question: "What catches you first in this moment?",
+    question: "What catches your attention first in this moment?",
     options: [
       "How long they hesitated before asking",
       "How much I actually have left to give",
       "What saying no would leave between us",
-      "What saying yes would cost my own weeks",
+      "What saying yes would cost me in the weeks ahead",
       "Whether I have to answer right now",
-      "That my chest went heavy the moment they asked"
+      "The heaviness in my chest the moment they asked"
     ]
   },
   {
@@ -39,16 +39,16 @@ export const SITUATIONS = [
     quote: "\u201CThis isn't what we were told to expect.\u201D",
     sceneAfter: [
       "No one speaks.",
-      "The room turns your way."
+      "The room turns toward you."
     ],
     question: "What rises in you first?",
     options: [
-      "A carefulness — someone is about to get hurt",
-      "A weight — I'm the one who has to do something",
-      "An unease — this is about to get worse",
-      "A frustration — we walked in underprepared",
-      "A tiredness — this is going to turn into blame",
-      "A pull to say nothing yet, and just watch"
+      "Caution — someone might get hurt",
+      "Pressure — I'm the one who has to do something",
+      "Unease — this is about to get worse",
+      "Frustration — we came in underprepared",
+      "Tiredness — this is going to turn into blame",
+      "A pull to say nothing yet and just watch"
     ]
   },
   {
@@ -57,16 +57,16 @@ export const SITUATIONS = [
     image: "/situation3.jpg",
     scene: [
       "Late afternoon. Where you are isn't bad. Comfortable, even.",
-      "Only lately, a thought keeps knocking \u2014 that there might be more past the comfortable part.",
-      "Three possibilities have opened in front of you."
+      "Lately, though, a thought keeps coming back \u2014 there might be more beyond what feels comfortable now.",
+      "Three possibilities have opened up in front of you."
     ],
     quote: null,
     sceneAfter: [],
-    question: "With these three in front of you, where do you move first?",
+    question: "With these three in front of you, where does your mind go first?",
     options: [
-      "A different seat here \u2014 more standing, same pay",
-      "Somewhere entirely new \u2014 unfamiliar work, better pay",
-      "Neither yet \u2014 stay, and make the next opening myself"
+      "A different role here \u2014 a promotion, similar pay",
+      "Somewhere entirely new \u2014 unfamiliar work, higher pay",
+      "Neither yet \u2014 stay, and create the next opportunity myself"
     ]
   }
 ];
@@ -165,19 +165,24 @@ export default function Prologue({ onEnter }) {
 
         <p className="eyebrow">Mirroring Mind</p>
 
-        <h1 className="prologue-title" data-reflect="Read your life again.">
-          Read your life again.
+        <h1 className="prologue-title" data-reflect="Look at your life again.">
+          Look at your life again.
         </h1>
 
         <div className="prologue-lines">
           <p>We don't always repeat the same life.</p>
-          <p>Sometimes we repeat the same question.</p>
+          <p>Sometimes, we repeat the same questions.</p>
           <div className="soft-break" />
-          <p>That question can protect us.</p>
-          <p>It can also return us to the same place.</p>
+          <p>And the questions we keep asking</p>
+          <p>can lead us to the same answers.</p>
+          <div className="soft-break" />
+          <p>Mirroring Mind helps you see</p>
+          <p>how you make choices,</p>
+          <p>what shapes your judgment,</p>
+          <p>and why you keep arriving at certain answers.</p>
         </div>
 
-        <p className="prologue-turn">Today, we go to meet it.</p>
+        <p className="prologue-turn">Today, we begin to look at them again.</p>
 
         <div className="button-row landing-buttons">
           <button className="primary-button" onClick={() => setPhase("situations")}>
@@ -246,7 +251,7 @@ export default function Prologue({ onEnter }) {
       <h1>You've moved through three moments.</h1>
 
       <p className="lead prologue-reveal-lead">
-        Here is what you chose, set back down in front of you.
+        Here is what you chose, placed in front of you again.
       </p>
 
       <div className="mirror-rows">
@@ -259,7 +264,7 @@ export default function Prologue({ onEnter }) {
       </div>
 
       <p className="lead prologue-reveal-note">
-        Whether something repeats here, or doesn't, is yours to read.
+        It's up to you to notice whether anything repeats.
       </p>
 
       <p className="landing-core prologue-core">
