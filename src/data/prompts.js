@@ -10,7 +10,10 @@ export const appCopy = {
     "A sentence forms."
   ],
 
-  landingCore: "What feels like a reaction may actually have a path.",
+  landingCore: "What feels like a reaction may actually follow a pattern.",
+
+  landingCoreSecond:
+    "Sometimes, the pattern becomes visible only when you look at the same moment again.",
 
   mapTitle: "Five quiet questions",
   mapText: "Move through them slowly, one at a time.",
