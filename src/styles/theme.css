@@ -1,780 +1,1066 @@
-export const quests = [
-  {
-    "id": "begin",
-    "number": 1,
-    "title": "What do you notice first?",
-    "accent": "sage",
-    "purpose": "Notice your beginning style: understanding, action, connection, stability, or intuition.",
-    "intro": "The same moment, seen your way.",
-    "reward": "You noticed where your mind tends to go first.",
-    "questions": [
-      {
-        "id": "begin-project",
-        "prompt": "A new project arrives, and you need to choose a direction within a week. What do you do first?",
-        "choices": [
-          "Talk it through with someone",
-          "Gather relevant examples and information",
-          "Notice the direction I instinctively feel drawn to",
-          "Check risks and possible failure points",
-          "Start with one small task"
-        ],
-        "styleMap": {
-          "Talk it through with someone": "connection",
-          "Gather relevant examples and information": "understanding",
-          "Notice the direction I instinctively feel drawn to": "intuition",
-          "Check risks and possible failure points": "stability",
-          "Start with one small task": "action"
-        },
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-wrong",
-        "prompt": "Something you thought was right turns out to be wrong. What thought appears first?",
-        "choices": [
-          "I want to understand where my judgment went off track",
-          "I wonder what mood or signal I missed",
-          "I wonder how other people are seeing this",
-          "I think about how to avoid repeating it",
-          "I accept what happened and move to the next step"
-        ],
-        "styleMap": {
-          "I want to understand where my judgment went off track": "understanding",
-          "I wonder what mood or signal I missed": "intuition",
-          "I wonder how other people are seeing this": "connection",
-          "I think about how to avoid repeating it": "stability",
-          "I accept what happened and move to the next step": "action"
-        },
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-limited-info",
-        "prompt": "You need to make an important choice, but the information is limited. What do you usually do?",
-        "choices": [
-          "Talk with someone I trust",
-          "Keep looking until I understand enough",
-          "Follow the direction that feels right",
-          "Check what feels safest or most stable",
-          "Decide first and adjust later"
-        ],
-        "styleMap": {
-          "Talk with someone I trust": "connection",
-          "Keep looking until I understand enough": "understanding",
-          "Follow the direction that feels right": "intuition",
-          "Check what feels safest or most stable": "stability",
-          "Decide first and adjust later": "action"
-        },
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-surprise",
-        "prompt": "A result is completely different from what you expected. What do you do first?",
-        "choices": [
-          "Look for another interpretation or possibility",
-          "Try again in a different way",
-          "Look for the cause",
-          "Listen to another person's perspective",
-          "Regroup and steady the situation"
-        ],
-        "styleMap": {
-          "Look for another interpretation or possibility": "intuition",
-          "Try again in a different way": "action",
-          "Look for the cause": "understanding",
-          "Listen to another person's perspective": "connection",
-          "Regroup and steady the situation": "stability"
-        },
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-misunderstood",
-        "prompt": "Someone seems to misunderstand you. How do you usually respond?",
-        "choices": [
-          "Notice the other person's feelings first",
-          "Try to explain myself fully",
-          "Protect my energy and keep things steady",
-          "Do something to clear up the situation",
-          "Wonder why the misunderstanding happened"
-        ],
-        "styleMap": {
-          "Notice the other person's feelings first": "connection",
-          "Try to explain myself fully": "understanding",
-          "Protect my energy and keep things steady": "stability",
-          "Do something to clear up the situation": "action",
-          "Wonder why the misunderstanding happened": "intuition"
-        },
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-stuck",
-        "prompt": "A situation has stayed unresolved for days. How do you respond?",
-        "choices": [
-          "Try a completely different approach",
-          "Ask someone for help",
-          "Revisit the definition and boundaries of the issue",
-          "Create structure around what is still unresolved",
-          "Keep searching because another way may exist"
-        ],
-        "styleMap": {
-          "Try a completely different approach": "action",
-          "Ask someone for help": "connection",
-          "Revisit the definition and boundaries of the issue": "understanding",
-          "Create structure around what is still unresolved": "stability",
-          "Keep searching because another way may exist": "intuition"
-        },
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-learning",
-        "prompt": "You need to learn a new subject. Where do you begin?",
-        "choices": [
-          "Learn by doing",
-          "Understand concepts and principles first",
-          "Start with the part that catches my attention",
-          "Learn from someone with experience",
-          "Look at the overall structure first"
-        ],
-        "styleMap": {
-          "Learn by doing": "action",
-          "Understand concepts and principles first": "understanding",
-          "Start with the part that catches my attention": "intuition",
-          "Learn from someone with experience": "connection",
-          "Look at the overall structure first": "stability"
-        },
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-discomfort",
-        "prompt": "Which situation feels most uncomfortable?",
-        "choices": [
-          "Facing a very uncertain future",
-          "Deciding before I fully understand",
-          "Carrying all the responsibility alone",
-          "Waiting when I can't do anything",
-          "Not being able to explain why I acted"
-        ],
-        "styleMap": {
-          "Facing a very uncertain future": "stability",
-          "Deciding before I fully understand": "understanding",
-          "Carrying all the responsibility alone": "connection",
-          "Waiting when I can't do anything": "action",
-          "Not being able to explain why I acted": "intuition"
-        },
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-flow",
-        "prompt": "When do you feel most absorbed?",
-        "choices": [
-          "When I discover a new possibility",
-          "When something complex becomes clear",
-          "When I solve something directly",
-          "When I feel deeply connected with someone",
-          "When things move steadily"
-        ],
-        "styleMap": {
-          "When I discover a new possibility": "intuition",
-          "When something complex becomes clear": "understanding",
-          "When I solve something directly": "action",
-          "When I feel deeply connected with someone": "connection",
-          "When things move steadily": "stability"
-        },
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-heavy-day",
-        "prompt": "When your mind has been busy all day, how do you usually settle it?",
-        "choices": [
-          "Return to a steady routine",
-          "Talk with someone",
-          "Move and let action carry me",
-          "Follow the feeling that keeps coming back",
-          "Keep thinking it through"
-        ],
-        "styleMap": {
-          "Return to a steady routine": "stability",
-          "Talk with someone": "connection",
-          "Move and let action carry me": "action",
-          "Follow the feeling that keeps coming back": "intuition",
-          "Keep thinking it through": "understanding"
-        },
-        "reflection": "Add a few words about why this feels close."
-      },
-      {
-        "id": "begin-values",
-        "prompt": "When two important things collide, what tends to guide your choice?",
-        "choices": [
-          "What helps more people",
-          "What I feel drawn toward right now",
-          "What feels safer",
-          "What feels most logical",
-          "What I can actually do next"
-        ],
-        "styleMap": {
-          "What helps more people": "connection",
-          "What I feel drawn toward right now": "intuition",
-          "What feels safer": "stability",
-          "What feels most logical": "understanding",
-          "What I can actually do next": "action"
-        },
-        "reflection": "Add a few words about why this feels close."
-      }
-    ]
-  },
-  {
-    "id": "feel",
-    "number": 2,
-    "title": "What stays with you most?",
-    "accent": "blue",
-    "purpose": "Name the emotions that appear first, where they come from, and how long they stay.",
-    "intro": "Some things quietly hold your attention.",
-    "reward": "You found a few words for what stayed with you.",
-    "questions": [
-      {
-        "id": "pride-entry",
-        "prompt": "Was there a recent moment when you felt quietly proud of yourself?",
-        "choices": [
-          "Yes",
-          "I'm not sure",
-          "Not really"
-        ],
-        "type": "single",
-        "reflection": "What word or phrase feels closest to your experience?"
-      },
-      {
-        "id": "pride-source",
-        "prompt": "Where did that good feeling seem to come from?",
-        "choices": [
-          "I did something through my own effort",
-          "Someone noticed me",
-          "I did something that once felt difficult",
-          "I chose it because I wanted to",
-          "I helped someone",
-          "I felt accepted as I was"
-        ],
-        "type": "single",
-        "reflection": "What word or phrase feels closest to your experience?"
-      },
-      {
-        "id": "pride-duration",
-        "prompt": "How long did that good feeling stay with you?",
-        "choices": [
-          "Only in that moment",
-          "A day or two",
-          "It stayed for quite a while",
-          "It still feels good when I remember it",
-          "It faded because I played it down",
-          "It faded because I moved on to what I had to do next"
-        ],
-        "type": "single",
-        "reflection": "What word or phrase feels closest to your experience?"
-      },
-      {
-        "id": "hard-entry",
-        "prompt": "Was there a recent moment when you felt small or strained?",
-        "choices": [
-          "Yes",
-          "I'm not sure",
-          "Not really"
-        ],
-        "type": "single",
-        "reflection": "What word or phrase feels closest to your experience?"
-      },
-      {
-        "id": "hard-source",
-        "prompt": "Where did that difficult feeling seem to come from?",
-        "choices": [
-          "From something inside me",
-          "From another person or situation",
-          "I felt ignored",
-          "I felt rejected",
-          "I felt misunderstood",
-          "I felt alone in it",
-          "I felt afraid someone would see something in me"
-        ],
-        "type": "multi",
-        "reflection": "What word or phrase feels closest to your experience?"
-      },
-      {
-        "id": "hard-duration",
-        "prompt": "How long did that difficult feeling stay with you?",
-        "choices": [
-          "Only in that moment",
-          "A day or two",
-          "I carried it for a while",
-          "It still feels close"
-        ],
-        "type": "single",
-        "reflection": "What word or phrase feels closest to your experience?"
-      },
-      {
-        "id": "emotion-context",
-        "prompt": "When do your emotions tend to feel strongest?",
-        "choices": [
-          "When I'm alone",
-          "When I'm with someone",
-          "When I'm doing work or tasks",
-          "When nothing is happening"
-        ],
-        "type": "single",
-        "reflection": "What word or phrase feels closest to your experience?"
-      },
-      {
-        "id": "relationship-feeling",
-        "prompt": "With other people, which feeling shows up most often?",
-        "choices": [
-          "It feels good to be together",
-          "I'm with people but feel alone",
-          "I feel I need to adjust myself",
-          "Relationships often hurt",
-          "I want to lean on someone but feel I shouldn't"
-        ],
-        "type": "multi",
-        "reflection": "What word or phrase feels closest to your experience?"
-      },
-      {
-        "id": "envy-shape",
-        "prompt": "When you feel envy, what is it usually connected to?",
-        "choices": [
-          "What someone has",
-          "The kind of person they seem to be",
-          "The care or recognition they receive",
-          "What they are able to do",
-          "How at ease they seem with themselves"
-        ],
-        "type": "single",
-        "reflection": "What word or phrase feels closest to your experience?"
-      },
-      {
-        "id": "self-surprise",
-        "prompt": "When have you felt most surprised by yourself?",
-        "choices": [
-          "When I reacted more strongly than expected",
-          "When I felt less affected than expected",
-          "When I did something I didn't want to do",
-          "When I couldn't do something I thought I could",
-          "When a feeling appeared that I didn't know was there"
-        ],
-        "type": "single",
-        "reflection": "What word or phrase feels closest to your experience?"
-      },
-      {
-        "id": "repeating-pattern",
-        "prompt": "When you think ‘here it is again,’ what is repeating?",
-        "choices": [
-          "I get angry in similar situations",
-          "I get hurt by similar kinds of people",
-          "I repeat a mistake after promising myself I wouldn't",
-          "Relationships turn in a similar way",
-          "I close myself off at similar moments",
-          "I give up around the same point"
-        ],
-        "type": "multi",
-        "reflection": "What word or phrase feels closest to your experience?"
-      },
-      {
-        "id": "pattern-response",
-        "prompt": "When you notice that pattern, what thought comes up?",
-        "choices": [
-          "Why am I like this?",
-          "Maybe it can't be helped",
-          "I want this to change",
-          "I want to understand why",
-          "I want to pretend I didn't see it",
-          "I don't really know"
-        ],
-        "type": "single",
-        "reflection": "What word or phrase feels closest to your experience?"
-      }
-    ]
-  },
-  {
-    "id": "interpret",
-    "number": 3,
-    "title": "What guides your judgment?",
-    "accent": "amber",
-    "purpose": "Notice automatic thoughts and interpretations that appear after emotions are triggered.",
-    "intro": "The same facts, weighed differently by each of us.",
-    "reward": "You noticed one inner thought that tends to appear.",
-    "questions": [
-      {
-        "id": "self-image",
-        "prompt": "What thought about yourself appears most often?",
-        "choices": [
-          "I somehow seem behind other people",
-          "I'm an okay person",
-          "I don't have anything I'm especially good at",
-          "I'm not a bad person",
-          "I don't really know myself"
-        ],
-        "reflection": "If there is an underlying thought, write it here."
-      },
-      {
-        "id": "self-image-when",
-        "prompt": "When does that thought feel strongest?",
-        "choices": [
-          "When I'm compared with someone",
-          "When I make a mistake",
-          "When I'm alone",
-          "When someone evaluates me",
-          "When I do well but it isn't recognized"
-        ],
-        "reflection": "If there is an underlying thought, write it here."
-      },
-      {
-        "id": "attribution",
-        "prompt": "When the feeling comes up, what thought appears automatically?",
-        "choices": [
-          "I did something wrong",
-          "The other person did something wrong",
-          "This is just how things are",
-          "I'm being too sensitive",
-          "There was nothing I could do",
-          "I don't know why"
-        ],
-        "reflection": "If there is an underlying thought, write it here."
-      },
-      {
-        "id": "threat-response",
-        "prompt": "When someone's words or actions touch on something sensitive, what happens first inside?",
-        "choices": [
-          "I want to prove they are wrong",
-          "I look for what I did wrong",
-          "I want to leave the situation",
-          "I pretend I'm fine",
-          "I hold it in and it comes out later",
-          "I react quickly and regret it later"
-        ],
-        "reflection": "If there is an underlying thought, write it here."
-      },
-      {
-        "id": "after-threat",
-        "prompt": "After that response passes, what thought tends to remain?",
-        "choices": [
-          "I reacted too sensitively",
-          "The other person was the problem",
-          "I don't understand why I did that",
-          "I regret it",
-          "There was nothing else I could do"
-        ],
-        "reflection": "If there is an underlying thought, write it here."
-      },
-      {
-        "id": "repeat-meaning",
-        "prompt": "When a similar situation happens again, what thought appears first?",
-        "choices": [
-          "Here it is again, maybe I can't do this",
-          "Here it is again, the other person is the problem",
-          "Here it is again, what could be different?",
-          "Here it is again, let it pass",
-          "Here it is again, I want to know why"
-        ],
-        "reflection": "If there is an underlying thought, write it here."
-      },
-      {
-        "id": "silence-reading",
-        "prompt": "When someone says nothing, what does your mind tend to imagine?",
-        "choices": [
-          "They may be angry with me",
-          "They may be ignoring me",
-          "They are probably busy",
-          "Something may be wrong",
-          "It may be because of me",
-          "They may not be thinking much about it"
-        ],
-        "reflection": "If there is an underlying thought, write it here."
-      },
-      {
-        "id": "silence-action",
-        "prompt": "When that thought appears, what do you do?",
-        "choices": [
-          "Ask directly",
-          "Keep thinking about it on my own",
-          "Create distance",
-          "Act as if nothing is wrong",
-          "Try to adjust myself first"
-        ],
-        "reflection": "If there is an underlying thought, write it here."
-      },
-      {
-        "id": "all-or-nothing",
-        "prompt": "When something doesn't go well, what thought appears?",
-        "choices": [
-          "It completely failed",
-          "This is good enough",
-          "Next time may go better",
-          "Of course I can't do it",
-          "The situation was difficult",
-          "Some parts worked and some didn't"
-        ],
-        "reflection": "If there is an underlying thought, write it here."
-      },
-      {
-        "id": "future-general",
-        "prompt": "When something hard happens, what thought appears about the future?",
-        "choices": [
-          "It will probably keep being like this",
-          "This was only this time",
-          "I'm always like this",
-          "This only happens to me",
-          "Next time could be different",
-          "I don't know"
-        ],
-        "reflection": "If there is an underlying thought, write it here."
-      },
-      {
-        "id": "future-worry",
-        "prompt": "When you worry about something that hasn't happened yet, what thought appears?",
-        "choices": [
-          "It probably won't go well",
-          "I imagine the worst first",
-          "I don't know, so I'll try",
-          "It could go either way",
-          "I avoid thinking about it",
-          "I prepare instead of worrying"
-        ],
-        "reflection": "If there is an underlying thought, write it here."
-      }
-    ]
-  },
-  {
-    "id": "respond",
-    "number": 4,
-    "title": "What keeps returning?",
-    "accent": "sage",
-    "purpose": "Trace one recent emotional moment: situation, feeling, body response, automatic thought, behavior, and relationship context.",
-    "intro": "Some responses have been with you for a long time.",
-    "reward": "You followed one response all the way through your body.",
-    "questions": [
-      {
-        "id": "memory-scene",
-        "prompt": "Think of a recent moment when you felt unsettled. What kind of situation was it?",
-        "choices": [
-          "Someone's words hurt me",
-          "A response I hoped for didn't come",
-          "I felt rejected",
-          "I thought I had made a mistake",
-          "A reply was delayed",
-          "I felt compared",
-          "I felt ignored",
-          "Something else"
-        ],
-        "type": "single",
-        "reflection": "What detail helps this feel more accurate?"
-      },
-      {
-        "id": "memory-feeling",
-        "prompt": "What feeling was closest in that moment?",
-        "choices": [
-          "Hurt — as if I was the only one who didn't understand",
-          "Anxiety — as if something might go wrong",
-          "Unfairness — I didn't mean it that way",
-          "Shame — as if something was exposed",
-          "Anger — heat rising",
-          "Loneliness — as if no one was there",
-          "Helplessness — as if I couldn't do anything",
-          "Tension — as if my body froze"
-        ],
-        "type": "single",
-        "reflection": "What detail helps this feel more accurate?"
-      },
-      {
-        "id": "feeling-size",
-        "prompt": "How intense did it feel?",
-        "choices": [
-          "Mild but noticeable",
-          "Quite strong",
-          "Strong enough to feel hard to handle",
-          "I'm not sure"
-        ],
-        "type": "single",
-        "reflection": "What detail helps this feel more accurate?"
-      },
-      {
-        "id": "inner-words",
-        "prompt": "What words appeared inside you then?",
-        "choices": [
-          "I'm not enough again",
-          "They aren't taking me seriously",
-          "I'm being left behind",
-          "If I make a mistake, it will be serious",
-          "I need to adjust first",
-          "No one understands what this is like for me",
-          "I need to solve this quickly",
-          "I just need to endure it",
-          "Something else"
-        ],
-        "type": "single",
-        "reflection": "What detail helps this feel more accurate?"
-      },
-      {
-        "id": "body-response",
-        "prompt": "How did your body respond?",
-        "choices": [
-          "My face felt hot",
-          "I started speaking faster",
-          "My heart sped up",
-          "My breathing became shallow",
-          "My body lost strength",
-          "My neck or shoulders tightened",
-          "My chest felt heavy",
-          "My stomach felt uneasy",
-          "I didn't want to speak",
-          "Tears came",
-          "Something else"
-        ],
-        "type": "multi",
-        "reflection": "What detail helps this feel more accurate?"
-      },
-      {
-        "id": "behavior-response",
-        "prompt": "What did you do in the situation?",
-        "choices": [
-          "Held it in first",
-          "Thought about it on my own and created distance",
-          "Asked directly or confronted them",
-          "Pretended I was fine",
-          "Noticed the other person's mood first",
-          "Looked first for what I did wrong",
-          "Wanted to cut the relationship off"
-        ],
-        "type": "single",
-        "reflection": "What detail helps this feel more accurate?"
-      },
-      {
-        "id": "familiar-response",
-        "prompt": "Was this response new or familiar?",
-        "choices": [
-          "It felt new",
-          "In this kind of situation, I often respond this way",
-          "It depends on the situation",
-          "I'm not sure"
-        ],
-        "type": "single",
-        "reflection": "What detail helps this feel more accurate?"
-      },
-      {
-        "id": "relationship-context",
-        "prompt": "Where does this response often appear?",
-        "choices": [
-          "Family",
-          "Friends",
-          "Partner or spouse",
-          "Work or school",
-          "People who may evaluate me",
-          "Someone I want to be close to",
-          "Someone with authority",
-          "Another relationship"
-        ],
-        "type": "single",
-        "reflection": "What detail helps this feel more accurate?"
-      },
-      {
-        "id": "self-thought-after",
-        "prompt": "After the situation, what thought about yourself appeared?",
-        "choices": [
-          "I'm not skilled at expressing feelings",
-          "I shouldn't be the first to lean on someone",
-          "I need to do well",
-          "I feel small around people",
-          "I carry hurt for a long time",
-          "Being alone is easier for me",
-          "I seem hard to love",
-          "None of these quite fit"
-        ],
-        "type": "single",
-        "reflection": "What detail helps this feel more accurate?"
-      },
-      {
-        "id": "memory-word",
-        "type": "text",
-        "prompt": "As you look back over this moment, did one word or phrase appear? A single word is enough.",
-        "reflection": "Let the word stay simple."
-      }
-    ]
-  },
-  {
-    "id": "possibility",
-    "number": 5,
-    "title": "What haven't you seen yet?",
-    "accent": "blue",
-    "purpose": "Look at the same memory from a slightly different angle, without forcing positivity.",
-    "intro": "One moment can hold more than one truth.",
-    "reward": "You allowed one other possibility to appear.",
-    "questions": [
-      {
-        "id": "remember",
-        "type": "text",
-        "prompt": "Close your eyes for a moment. Is there one memory that comes up now? Old or small is okay. One memory is enough.",
-        "reflection": "Write only what feels safe and useful to name."
-      },
-      {
-        "id": "first-thought",
-        "prompt": "When you remember it, what thought appears first?",
-        "choices": [
-          "I think I missed something",
-          "I should have done it differently",
-          "Someone and I weren't really understanding each other",
-          "I was very careful then",
-          "There may have been another way",
-          "It wasn't something I could simply move past",
-          "That version of me is still vivid",
-          "I think I did well then"
-        ],
-        "type": "single",
-        "reflection": "Choose what feels closest, then add your own words if needed."
-      },
-      {
-        "id": "memory-state",
-        "prompt": "How does that memory feel to you now?",
-        "choices": [
-          "Sometimes I simply remember that it happened",
-          "When it appears, the feeling comes back strongly",
-          "I don't know exactly what it is, but something still catches my attention",
-          "I keep it buried deeply",
-          "It seems important, though I don't know why",
-          "It is a memory I sometimes want to look at again"
-        ],
-        "type": "single",
-        "reflection": "Choose what feels closest, then add your own words if needed."
-      },
-      {
-        "id": "memory-emotions",
-        "prompt": "What feeling does the memory carry?",
-        "choices": [
-          "Unfairness — I didn't mean it that way",
-          "Regret — if only it had been different",
-          "Guilt or self-blame — I should have done better",
-          "Longing — that person or that time",
-          "Pride — I still think I did well",
-          "Loneliness — I was alone",
-          "Warmth — it remains a good memory",
-          "Confusion — I still don't know what to make of it"
-        ],
-        "type": "multi",
-        "reflection": "Choose what feels closest, then add your own words if needed."
-      },
-      {
-        "id": "new-window",
-        "prompt": "Looking at it from where you are now, does anything seem different?",
-        "choices": [
-          "I thought I was the problem then, but maybe that wasn't the whole story",
-          "I thought it was my fault, but maybe more was going on than I could see",
-          "I thought the other person was to blame, but maybe there was more to it",
-          "I thought there was no choice, but maybe there was another one",
-          "I thought it was over, but maybe something is still open",
-          "I thought it meant nothing, but maybe it did mean something",
-          "I thought I wasn't enough, but maybe I was enough then",
-          "It was a good memory, but I had not connected it with who I am now"
-        ],
-        "type": "single",
-        "reflection": "Choose what feels closest, then add your own words if needed."
-      },
-      {
-        "id": "maybe",
-        "type": "text",
-        "prompt": "As you look at this memory now, is there something new in your mind? You can begin with “Maybe…”",
-        "reflection": "Let one other possibility appear without forcing it."
-      }
-    ],
-    "note": "Seeing another possibility does not erase the first one. Take only what feels safe to look at."
+/* ============================================================
+   Mirroring Mind — Still Water
+   Light, luminous, reflective. Reflection is the signature.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Instrument+Sans:wght@400;500;600&display=swap');
+
+:root {
+  /* water surface gradient */
+  --mist-top: #eaf1f1;
+  --mist-mid: #cfdee0;
+  --mist-low: #dbe6e6;
+  --mist-bot: #eef4f3;
+
+  /* ink */
+  --ink: #1e3a3e;
+  --ink-soft: #34535a;
+  --muted: #5f767b;
+  --faint: #88a0a3;
+
+  /* accents */
+  --water: #9db8bb;
+  --gold: #bf9350;
+  --sage: #8aa79a;
+  --blue: #7f9fb0;
+  --amber: #c9a468;
+
+  /* surfaces */
+  --card: rgba(255, 255, 255, 0.55);
+  --card-solid: rgba(255, 255, 255, 0.78);
+  --line: rgba(30, 58, 62, 0.14);
+  --line-soft: rgba(30, 58, 62, 0.08);
+
+  --radius: 16px;
+  --radius-lg: 22px;
+  --maxw: 620px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(
+    180deg,
+    var(--mist-top) 0%,
+    var(--mist-mid) 46%,
+    var(--mist-low) 54%,
+    var(--mist-bot) 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+  line-height: 1.55;
+}
+
+/* ---------- shared shell ---------- */
+
+.screen {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 44px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(1.7rem, 4.6vw, 2.3rem);
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h2 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+p {
+  color: var(--ink-soft);
+}
+
+.eyebrow {
+  font-size: 0.64rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 500;
+}
+
+.lead {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.soft-note {
+  font-size: 0.85rem;
+  color: var(--faint);
+  line-height: 1.6;
+}
+
+.soft-break {
+  display: block;
+  height: 10px;
+}
+
+/* ---------- buttons ---------- */
+
+.primary-button {
+  background: var(--ink);
+  color: #eef4f3;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 30px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.94rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.primary-button:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.primary-button:disabled {
+  opacity: 0.32;
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 13px 26px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.text-button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.text-button:hover {
+  color: var(--ink);
+}
+
+.back-button {
+  align-self: flex-start;
+  margin-bottom: 26px;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.button-row-stacked {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button-row-stacked .primary-button,
+.button-row-stacked .secondary-button {
+  width: 100%;
+  text-align: center;
+}
+
+.split-row {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.map-actions {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- 1 · welcome (name on water) ---------- */
+
+.welcome-screen {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-screen h1 {
+  font-size: clamp(2.4rem, 9vw, 3.1rem);
+  line-height: 1;
+  margin-top: 20px;
+}
+
+/* the reflection: name mirrored on the surface, with color and ripple */
+.welcome-screen h1::after {
+  content: attr(data-reflect);
+  display: block;
+  transform: scaleY(-1);
+  margin-top: 3px;
+  color: var(--ink);
+  opacity: 0.62;
+  filter: url(#water-ripple);
+  -webkit-mask-image: linear-gradient(#000, transparent 72%);
+  mask-image: linear-gradient(#000, transparent 72%);
+  pointer-events: none;
+}
+
+.welcome-intro {
+  margin: 26px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 300px;
+}
+
+.landing-core {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.28rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  max-width: 300px;
+  margin: 24px 0 0;
+  position: relative;
+  padding-top: 24px;
+}
+
+/* waterline above the core sentence */
+.landing-core::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--water), transparent);
+}
+
+.landing-core-second {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 320px;
+  margin: 14px auto 0;
+}
+
+.welcome-body {
+  margin-top: 22px;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 330px;
+}
+
+.welcome-letter {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+/* ---------- 2 · quest map ---------- */
+
+.map-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.map-intro h1 {
+  margin: 8px 0 10px;
+}
+
+.map-intro .lead {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.space-path {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* stacked layout — fixes the cramped 3-line title problem */
+.space-step {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 18px 20px 18px 54px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+}
+
+.space-step.is-open:hover {
+  background: var(--card-solid);
+  border-color: var(--line);
+  transform: translateY(-1px);
+}
+
+.space-step.is-locked {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.space-roman {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--gold);
+}
+
+/* reflected numeral — the signature, quietly */
+.space-roman::after {
+  content: attr(data-roman);
+  position: absolute;
+  left: 0;
+  top: 116%;
+  transform: scaleY(-1);
+  opacity: 0.2;
+  color: var(--water);
+  -webkit-mask-image: linear-gradient(#000, transparent);
+  mask-image: linear-gradient(#000, transparent);
+}
+
+.space-title {
+  display: block;
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.16rem;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+
+.space-text {
+  display: block;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* legacy — space names were removed from the UI */
+.space-name {
+  display: none;
+}
+
+/* ---------- 3 · quest intro ---------- */
+
+.quest-intro-screen {
+  justify-content: center;
+}
+
+.quest-intro-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.quest-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.quest-intro-panel h1 {
+  margin-bottom: 14px;
+}
+
+.quest-intro-panel .lead {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 420px;
+  margin-bottom: 34px;
+}
+
+/* ---------- 4 · question ---------- */
+
+.quest-screen {
+  justify-content: flex-start;
+}
+
+.quest-card {
+  background: transparent;
+}
+
+.question-card .eyebrow {
+  margin-bottom: 12px;
+}
+
+.quest-lead-in {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.quest-note {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--faint);
+  margin: -6px 0 16px;
+}
+
+.question-card h1 {
+  font-size: clamp(1.35rem, 4.2vw, 1.6rem);
+  line-height: 1.28;
+  margin-bottom: 6px;
+  white-space: pre-line;
+}
+
+/* waterline dividing the question from the choices */
+.choice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 26px;
+  padding-top: 22px;
+  position: relative;
+}
+
+.choice-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--water), transparent);
+}
+
+.choice-button {
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.choice-button:hover {
+  background: var(--card-solid);
+  border-color: var(--line);
+}
+
+.choice-button.is-selected {
+  background: rgba(30, 58, 62, 0.92);
+  color: #eef4f3;
+  border-color: transparent;
+}
+
+/* the selected choice casts a soft reflection */
+.choice-button.is-selected::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: -5px;
+  height: 6px;
+  border-radius: 6px;
+  background: rgba(30, 58, 62, 0.18);
+  -webkit-mask-image: linear-gradient(#000, transparent);
+  mask-image: linear-gradient(#000, transparent);
+  pointer-events: none;
+}
+
+.reflection-field {
+  display: block;
+  margin-top: 24px;
+}
+
+.reflection-field span {
+  display: block;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--faint);
+  margin-bottom: 8px;
+}
+
+.reflection-field textarea {
+  width: 100%;
+  min-height: 78px;
+  resize: vertical;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  padding: 13px 15px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.reflection-field textarea:focus {
+  outline: none;
+  border-color: var(--water);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.reflection-field textarea::placeholder {
+  color: var(--faint);
+}
+
+/* ---------- progress ---------- */
+
+.quest-progress {
+  margin-bottom: 10px;
+}
+
+.quest-progress-count {
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.progress-trail {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 26px;
+}
+
+.progress-trail i,
+.progress-trail span {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(30, 58, 62, 0.13);
+}
+
+.progress-trail .is-done,
+.progress-trail .is-active {
+  background: linear-gradient(90deg, var(--water), var(--ink));
+}
+
+/* ---------- 5 · reward ---------- */
+
+.reward-card {
+  margin: auto 0;
+  text-align: center;
+  padding: 34px 26px;
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+}
+
+.reward-card h1 {
+  font-size: 1.35rem;
+  line-height: 1.35;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ---------- 6 · stage reflection ---------- */
+
+.stage-reflection-screen {
+  justify-content: flex-start;
+}
+
+.soft-panel {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 22px 22px;
+  margin-top: 20px;
+}
+
+.reflection-section {
+  padding: 16px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.reflection-section:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.reflection-section h2 {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.reflection-letter {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  white-space: pre-line;
+}
+
+.style-result {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.12rem;
+  color: var(--ink);
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: rgba(157, 184, 187, 0.18);
+  margin-top: 16px;
+}
+
+/* ---------- 7 · final — Today's Mirror ---------- */
+
+.final-screen {
+  justify-content: flex-start;
+}
+
+.reflection-card {
+  margin-top: 18px;
+}
+
+/* the title's reflection on the surface */
+.final-screen h1 {
+  position: relative;
+}
+
+.mirror-rows {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.mirror-row {
+  padding: 15px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.mirror-row:first-child {
+  border-top: none;
+}
+
+.mirror-row h2,
+.mirror-row .eyebrow {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.mirror-row p {
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.warm-mirror,
+.carry-question {
+  margin-top: 20px;
+  padding: 20px 22px;
+  border-radius: var(--radius);
+  background: rgba(157, 184, 187, 0.18);
+}
+
+.warm-mirror p,
+.carry-question p {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* legacy decorative motif — removed with the space metaphors */
+.motif-window::after {
+  content: none;
+}
+
+/* ---------- prologue & situation revisit ---------- */
+
+.prologue-screen {
+  justify-content: center;
+}
+
+.prologue-door {
+  align-items: center;
+  text-align: center;
+}
+
+.prologue-title {
+  font-size: clamp(1.9rem, 6.5vw, 2.5rem);
+  font-style: italic;
+  line-height: 1.1;
+  margin: 16px 0 30px;
+}
+
+.prologue-title::after {
+  content: attr(data-reflect);
+  display: block;
+  transform: scaleY(-1);
+  margin-top: 3px;
+  color: var(--ink);
+  opacity: 0.56;
+  filter: url(#water-ripple);
+  -webkit-mask-image: linear-gradient(#000, transparent 70%);
+  mask-image: linear-gradient(#000, transparent 70%);
+  pointer-events: none;
+}
+
+.prologue-lines p {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.prologue-turn {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  margin-top: 26px;
+}
+
+.situation-image {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 3 / 4;
+  margin: 0 0 26px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--line-soft);
+}
+
+.situation-image-small {
+  max-width: 150px;
+  aspect-ratio: 3 / 4;
+  margin: 16px 0 0;
+}
+
+.situation-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* keeps the darker scenes from fighting the light background */
+  opacity: 0.94;
+}
+
+/* a thin veil of the water tone, so illustrations sit inside the theme */
+.situation-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(234, 241, 241, 0.18) 0%,
+    rgba(157, 184, 187, 0.06) 55%,
+    rgba(234, 241, 241, 0.22) 100%
+  );
+  pointer-events: none;
+}
+
+.situation-label {
+  margin-bottom: 22px;
+}
+
+.situation-scene p {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.situation-scene-after {
+  margin-top: 20px;
+}
+
+.situation-scene-after p {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.situation-quote {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  padding: 4px 0 4px 18px;
+  border-left: 2px solid var(--gold);
+  margin: 22px 0;
+}
+
+.situation-question {
+  font-size: clamp(1.3rem, 4.2vw, 1.55rem);
+  line-height: 1.3;
+  margin-top: 30px;
+}
+
+.revisit-screen {
+  justify-content: flex-start;
+}
+
+.revisit-emphasis {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 14px 0;
+}
+
+.revisit-intro {
+  margin-top: 18px;
+}
+
+.revisit-recap {
+  margin-top: 16px;
+  opacity: 0.72;
+}
+
+.revisit-recap p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.revisit-previous {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: rgba(157, 184, 187, 0.16);
+}
+
+.revisit-previous .situation-image-small {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.revisit-previous-text {
+  flex: 1;
+}
+
+.revisit-previous .eyebrow {
+  margin-bottom: 6px;
+}
+
+.revisit-previous p:last-child {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.revisit-choose-label {
+  margin: 24px 0 10px;
+}
+
+.revisit-reason {
+  margin-top: 26px;
+}
+
+.prologue-reveal-lead {
+  margin-top: 14px;
+}
+
+.prologue-reveal-note {
+  margin-top: 24px;
+}
+
+.prologue-core {
+  max-width: none;
+  text-align: left;
+}
+
+.prologue-core::before {
+  left: 0;
+  transform: none;
+}
+
+/* ---------- AI synthesis on the final screen ---------- */
+
+.synthesis-loading {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.synthesis-block {
+  margin-top: 24px;
+  padding: 24px 22px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line-soft);
+}
+
+.synthesis-title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+
+.synthesis-block .reflection-section p {
+  font-size: 0.95rem;
+  line-height: 1.72;
+}
+
+/* ---------- situation block on the final screen ---------- */
+
+.closing-line {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-top: 30px;
+  padding-top: 26px;
+  position: relative;
+}
+
+.closing-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--water), transparent);
+}
+
+.situation-block {
+  margin-top: 34px;
+  padding-top: 28px;
+  position: relative;
+}
+
+.situation-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--water), transparent);
+}
+
+.situation-block-intro {
+  margin: 10px 0 4px;
+}
+
+.situation-block-note {
+  margin-top: 20px;
+}
+
+.situation-block-close {
+  margin-top: 16px;
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 480px) {
+  .screen {
+    padding: 34px 18px 52px;
   }
-];
+
+  .space-step {
+    padding: 16px 16px 16px 48px;
+  }
+
+  .space-roman {
+    left: 17px;
+  }
+
+  .situation-image-small {
+    max-width: 84px;
+  }
+
+  .button-row {
+    gap: 10px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 13px 22px;
+    font-size: 0.9rem;
+  }
+}
