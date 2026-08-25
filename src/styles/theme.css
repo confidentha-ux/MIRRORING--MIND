@@ -276,6 +276,14 @@ p {
   background: linear-gradient(90deg, transparent, var(--water), transparent);
 }
 
+.landing-core-second {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 320px;
+  margin: 14px auto 0;
+}
+
 .welcome-body {
   margin-top: 22px;
   font-size: 0.88rem;
@@ -445,6 +453,13 @@ p {
   line-height: 1.45;
   color: var(--muted);
   margin-bottom: 14px;
+}
+
+.quest-note {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--faint);
+  margin: -6px 0 16px;
 }
 
 .question-card h1 {
