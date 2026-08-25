@@ -981,6 +981,27 @@ p {
 
 /* ---------- situation block on the final screen ---------- */
 
+.closing-line {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-top: 30px;
+  padding-top: 26px;
+  position: relative;
+}
+
+.closing-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--water), transparent);
+}
+
 .situation-block {
   margin-top: 34px;
   padding-top: 28px;
