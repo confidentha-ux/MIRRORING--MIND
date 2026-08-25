@@ -6,24 +6,24 @@ export const quests = [
     "accent": "sage",
     "purpose": "Notice your beginning style: understanding, action, connection, stability, or intuition.",
     "intro": "The same moment, seen your way.",
-    "reward": "You noticed the first movement your mind reaches for.",
+    "reward": "You noticed where your mind tends to go first.",
     "questions": [
       {
         "id": "begin-project",
         "prompt": "A new project arrives, and you need to choose a direction within a week. What do you do first?",
         "choices": [
           "Talk it through with someone",
-          "Gather related examples and information",
-          "Notice the direction you intuitively feel drawn to",
+          "Gather relevant examples and information",
+          "Notice the direction I instinctively feel drawn to",
           "Check risks and possible failure points",
           "Start with one small task"
         ],
         "styleMap": {
-          "Gather related examples and information": "understanding",
-          "Start with one small task": "action",
           "Talk it through with someone": "connection",
+          "Gather relevant examples and information": "understanding",
+          "Notice the direction I instinctively feel drawn to": "intuition",
           "Check risks and possible failure points": "stability",
-          "Notice the direction you intuitively feel drawn to": "intuition"
+          "Start with one small task": "action"
         },
         "reflection": "Add a few words about why this feels close."
       },
@@ -31,18 +31,18 @@ export const quests = [
         "id": "begin-wrong",
         "prompt": "Something you thought was right turns out to be wrong. What thought appears first?",
         "choices": [
-          "I want to understand where my judgment shifted",
+          "I want to understand where my judgment went off track",
           "I wonder what mood or signal I missed",
           "I wonder how other people are seeing this",
           "I think about how to avoid repeating it",
-          "I accept the fact and move to the next step"
+          "I accept what happened and move to the next step"
         ],
         "styleMap": {
-          "I want to understand where my judgment shifted": "understanding",
-          "I accept the fact and move to the next step": "action",
+          "I want to understand where my judgment went off track": "understanding",
+          "I wonder what mood or signal I missed": "intuition",
           "I wonder how other people are seeing this": "connection",
           "I think about how to avoid repeating it": "stability",
-          "I wonder what mood or signal I missed": "intuition"
+          "I accept what happened and move to the next step": "action"
         },
         "reflection": "Add a few words about why this feels close."
       },
@@ -57,11 +57,11 @@ export const quests = [
           "Decide first and adjust later"
         ],
         "styleMap": {
-          "Keep looking until I understand enough": "understanding",
-          "Decide first and adjust later": "action",
           "Talk with someone I trust": "connection",
+          "Keep looking until I understand enough": "understanding",
+          "Follow the direction that feels right": "intuition",
           "Check what feels safest or most stable": "stability",
-          "Follow the direction that feels right": "intuition"
+          "Decide first and adjust later": "action"
         },
         "reflection": "Add a few words about why this feels close."
       },
@@ -72,15 +72,15 @@ export const quests = [
           "Look for another interpretation or possibility",
           "Try again in a different way",
           "Look for the cause",
-          "Listen to another person's view",
-          "Organize myself and steady the situation"
+          "Listen to another person's perspective",
+          "Regroup and steady the situation"
         ],
         "styleMap": {
-          "Look for the cause": "understanding",
+          "Look for another interpretation or possibility": "intuition",
           "Try again in a different way": "action",
-          "Listen to another person's view": "connection",
-          "Organize myself and steady the situation": "stability",
-          "Look for another interpretation or possibility": "intuition"
+          "Look for the cause": "understanding",
+          "Listen to another person's perspective": "connection",
+          "Regroup and steady the situation": "stability"
         },
         "reflection": "Add a few words about why this feels close."
       },
@@ -89,34 +89,34 @@ export const quests = [
         "prompt": "Someone seems to misunderstand you. How do you usually respond?",
         "choices": [
           "Notice the other person's feelings first",
-          "Try to explain fully",
+          "Try to explain myself fully",
           "Protect my energy and keep things steady",
-          "Do something to clear the situation",
+          "Do something to clear up the situation",
           "Wonder why the misunderstanding happened"
         ],
         "styleMap": {
-          "Try to explain fully": "understanding",
-          "Do something to clear the situation": "action",
           "Notice the other person's feelings first": "connection",
+          "Try to explain myself fully": "understanding",
           "Protect my energy and keep things steady": "stability",
+          "Do something to clear up the situation": "action",
           "Wonder why the misunderstanding happened": "intuition"
         },
         "reflection": "Add a few words about why this feels close."
       },
       {
         "id": "begin-stuck",
-        "prompt": "A situation has stayed unresolved for days. How do you move?",
+        "prompt": "A situation has stayed unresolved for days. How do you respond?",
         "choices": [
-          "Try a completely different way",
+          "Try a completely different approach",
           "Ask someone for help",
-          "Revisit the definition and edges of the issue",
+          "Revisit the definition and boundaries of the issue",
           "Create structure around what is still unresolved",
           "Keep searching because another way may exist"
         ],
         "styleMap": {
-          "Revisit the definition and edges of the issue": "understanding",
-          "Try a completely different way": "action",
+          "Try a completely different approach": "action",
           "Ask someone for help": "connection",
+          "Revisit the definition and boundaries of the issue": "understanding",
           "Create structure around what is still unresolved": "stability",
           "Keep searching because another way may exist": "intuition"
         },
@@ -128,16 +128,16 @@ export const quests = [
         "choices": [
           "Learn by doing",
           "Understand concepts and principles first",
-          "Start with the part that draws my attention",
-          "Learn through someone with experience",
+          "Start with the part that catches my attention",
+          "Learn from someone with experience",
           "Look at the overall structure first"
         ],
         "styleMap": {
-          "Understand concepts and principles first": "understanding",
           "Learn by doing": "action",
-          "Learn through someone with experience": "connection",
-          "Look at the overall structure first": "stability",
-          "Start with the part that draws my attention": "intuition"
+          "Understand concepts and principles first": "understanding",
+          "Start with the part that catches my attention": "intuition",
+          "Learn from someone with experience": "connection",
+          "Look at the overall structure first": "stability"
         },
         "reflection": "Add a few words about why this feels close."
       },
@@ -152,10 +152,10 @@ export const quests = [
           "Not being able to explain why I acted"
         ],
         "styleMap": {
-          "Deciding before I fully understand": "understanding",
-          "Waiting when I can't do anything": "action",
-          "Carrying all the responsibility alone": "connection",
           "Facing a very uncertain future": "stability",
+          "Deciding before I fully understand": "understanding",
+          "Carrying all the responsibility alone": "connection",
+          "Waiting when I can't do anything": "action",
           "Not being able to explain why I acted": "intuition"
         },
         "reflection": "Add a few words about why this feels close."
@@ -171,11 +171,11 @@ export const quests = [
           "When things move steadily"
         ],
         "styleMap": {
+          "When I discover a new possibility": "intuition",
           "When something complex becomes clear": "understanding",
           "When I solve something directly": "action",
           "When I feel deeply connected with someone": "connection",
-          "When things move steadily": "stability",
-          "When I discover a new possibility": "intuition"
+          "When things move steadily": "stability"
         },
         "reflection": "Add a few words about why this feels close."
       },
@@ -186,15 +186,15 @@ export const quests = [
           "Return to a steady routine",
           "Talk with someone",
           "Move and let action carry me",
-          "Follow the feeling that keeps appearing",
+          "Follow the feeling that keeps coming back",
           "Keep thinking it through"
         ],
         "styleMap": {
-          "Keep thinking it through": "understanding",
-          "Move and let action carry me": "action",
-          "Talk with someone": "connection",
           "Return to a steady routine": "stability",
-          "Follow the feeling that keeps appearing": "intuition"
+          "Talk with someone": "connection",
+          "Move and let action carry me": "action",
+          "Follow the feeling that keeps coming back": "intuition",
+          "Keep thinking it through": "understanding"
         },
         "reflection": "Add a few words about why this feels close."
       },
@@ -203,17 +203,17 @@ export const quests = [
         "prompt": "When two important things collide, what tends to guide your choice?",
         "choices": [
           "What helps more people",
-          "What my heart moves toward right now",
+          "What I feel drawn toward right now",
           "What feels safer",
           "What feels most logical",
           "What I can actually do next"
         ],
         "styleMap": {
-          "What feels most logical": "understanding",
-          "What I can actually do next": "action",
           "What helps more people": "connection",
+          "What I feel drawn toward right now": "intuition",
           "What feels safer": "stability",
-          "What my heart moves toward right now": "intuition"
+          "What feels most logical": "understanding",
+          "What I can actually do next": "action"
         },
         "reflection": "Add a few words about why this feels close."
       }
@@ -248,28 +248,28 @@ export const quests = [
           "I did something that once felt difficult",
           "I chose it because I wanted to",
           "I helped someone",
-          "I felt welcomed as I was"
+          "I felt accepted as I was"
         ],
         "type": "single",
         "reflection": "What word or phrase feels closest to your experience?"
       },
       {
         "id": "pride-duration",
-        "prompt": "How long did that good feeling stay?",
+        "prompt": "How long did that good feeling stay with you?",
         "choices": [
-          "Only that moment",
+          "Only in that moment",
           "A day or two",
           "It stayed for quite a while",
           "It still feels good when I remember it",
-          "It faded because I minimized it",
-          "It faded because I moved to what I had to do next"
+          "It faded because I played it down",
+          "It faded because I moved on to what I had to do next"
         ],
         "type": "single",
         "reflection": "What word or phrase feels closest to your experience?"
       },
       {
         "id": "hard-entry",
-        "prompt": "Was there a recent moment when you felt smaller or strained?",
+        "prompt": "Was there a recent moment when you felt small or strained?",
         "choices": [
           "Yes",
           "I'm not sure",
@@ -280,7 +280,7 @@ export const quests = [
       },
       {
         "id": "hard-source",
-        "prompt": "Where did the hard feeling seem to come from?",
+        "prompt": "Where did that difficult feeling seem to come from?",
         "choices": [
           "From something inside me",
           "From another person or situation",
@@ -295,19 +295,19 @@ export const quests = [
       },
       {
         "id": "hard-duration",
-        "prompt": "How long did the hard feeling stay?",
+        "prompt": "How long did that difficult feeling stay with you?",
         "choices": [
-          "Only that moment",
+          "Only in that moment",
           "A day or two",
           "I carried it for a while",
-          "It still seems nearby"
+          "It still feels close"
         ],
         "type": "single",
         "reflection": "What word or phrase feels closest to your experience?"
       },
       {
         "id": "emotion-context",
-        "prompt": "When do your emotions seem to turn on most strongly?",
+        "prompt": "When do your emotions tend to feel strongest?",
         "choices": [
           "When I'm alone",
           "When I'm with someone",
@@ -332,13 +332,13 @@ export const quests = [
       },
       {
         "id": "envy-shape",
-        "prompt": "When you feel envy, what is it usually close to?",
+        "prompt": "When you feel envy, what is it usually connected to?",
         "choices": [
           "What someone has",
           "The kind of person they seem to be",
           "The care or recognition they receive",
           "What they are able to do",
-          "Their ease with themselves"
+          "How at ease they seem with themselves"
         ],
         "type": "single",
         "reflection": "What word or phrase feels closest to your experience?"
@@ -361,10 +361,10 @@ export const quests = [
         "prompt": "When you think ‘here it is again,’ what is repeating?",
         "choices": [
           "I get angry in similar situations",
-          "I'm hurt by similar people",
-          "I repeat a mistake after promising not to",
+          "I get hurt by similar kinds of people",
+          "I repeat a mistake after promising myself I wouldn't",
           "Relationships turn in a similar way",
-          "I close myself at similar moments",
+          "I close myself off at similar moments",
           "I give up around the same point"
         ],
         "type": "multi",
@@ -393,7 +393,7 @@ export const quests = [
     "accent": "amber",
     "purpose": "Notice automatic thoughts and interpretations that appear after emotions are triggered.",
     "intro": "The same facts, weighed differently by each of us.",
-    "reward": "You noticed one inner sentence that tends to appear.",
+    "reward": "You noticed one inner thought that tends to appear.",
     "questions": [
       {
         "id": "self-image",
@@ -405,7 +405,7 @@ export const quests = [
           "I'm not a bad person",
           "I don't really know myself"
         ],
-        "reflection": "If there is an inner sentence underneath it, write it here."
+        "reflection": "If there is an underlying thought, write it here."
       },
       {
         "id": "self-image-when",
@@ -417,11 +417,11 @@ export const quests = [
           "When someone evaluates me",
           "When I do well but it isn't recognized"
         ],
-        "reflection": "If there is an inner sentence underneath it, write it here."
+        "reflection": "If there is an underlying thought, write it here."
       },
       {
         "id": "attribution",
-        "prompt": "When the feeling comes up, what thought turns on automatically?",
+        "prompt": "When the feeling comes up, what thought appears automatically?",
         "choices": [
           "I did something wrong",
           "The other person did something wrong",
@@ -430,11 +430,11 @@ export const quests = [
           "There was nothing I could do",
           "I don't know why"
         ],
-        "reflection": "If there is an inner sentence underneath it, write it here."
+        "reflection": "If there is an underlying thought, write it here."
       },
       {
         "id": "threat-response",
-        "prompt": "When someone's words or actions touch a sensitive place, what happens first inside?",
+        "prompt": "When someone's words or actions touch on something sensitive, what happens first inside?",
         "choices": [
           "I want to prove they are wrong",
           "I look for what I did wrong",
@@ -443,31 +443,31 @@ export const quests = [
           "I hold it in and it comes out later",
           "I react quickly and regret it later"
         ],
-        "reflection": "If there is an inner sentence underneath it, write it here."
+        "reflection": "If there is an underlying thought, write it here."
       },
       {
         "id": "after-threat",
         "prompt": "After that response passes, what thought tends to remain?",
         "choices": [
           "I reacted too sensitively",
-          "The other person was the issue",
+          "The other person was the problem",
           "I don't understand why I did that",
           "I regret it",
           "There was nothing else I could do"
         ],
-        "reflection": "If there is an inner sentence underneath it, write it here."
+        "reflection": "If there is an underlying thought, write it here."
       },
       {
         "id": "repeat-meaning",
         "prompt": "When a similar situation happens again, what thought appears first?",
         "choices": [
-          "Here it is again; maybe I can't do this",
-          "Here it is again; the other person is the issue",
-          "Here it is again; what could be different?",
-          "Here it is again; let it pass",
-          "Here it is again; I want to know why"
+          "Here it is again, maybe I can't do this",
+          "Here it is again, the other person is the problem",
+          "Here it is again, what could be different?",
+          "Here it is again, let it pass",
+          "Here it is again, I want to know why"
         ],
-        "reflection": "If there is an inner sentence underneath it, write it here."
+        "reflection": "If there is an underlying thought, write it here."
       },
       {
         "id": "silence-reading",
@@ -480,32 +480,32 @@ export const quests = [
           "It may be because of me",
           "They may not be thinking much about it"
         ],
-        "reflection": "If there is an inner sentence underneath it, write it here."
+        "reflection": "If there is an underlying thought, write it here."
       },
       {
         "id": "silence-action",
         "prompt": "When that thought appears, what do you do?",
         "choices": [
           "Ask directly",
-          "Keep thinking alone",
+          "Keep thinking about it on my own",
           "Create distance",
           "Act as if nothing is wrong",
           "Try to adjust myself first"
         ],
-        "reflection": "If there is an inner sentence underneath it, write it here."
+        "reflection": "If there is an underlying thought, write it here."
       },
       {
         "id": "all-or-nothing",
         "prompt": "When something doesn't go well, what thought appears?",
         "choices": [
           "It completely failed",
-          "This is okay enough",
+          "This is good enough",
           "Next time may go better",
           "Of course I can't do it",
           "The situation was difficult",
           "Some parts worked and some didn't"
         ],
-        "reflection": "If there is an inner sentence underneath it, write it here."
+        "reflection": "If there is an underlying thought, write it here."
       },
       {
         "id": "future-general",
@@ -518,7 +518,7 @@ export const quests = [
           "Next time could be different",
           "I don't know"
         ],
-        "reflection": "If there is an inner sentence underneath it, write it here."
+        "reflection": "If there is an underlying thought, write it here."
       },
       {
         "id": "future-worry",
@@ -526,12 +526,12 @@ export const quests = [
         "choices": [
           "It probably won't go well",
           "I imagine the worst first",
-          "I don't know, so I will try",
-          "It could go well or not",
+          "I don't know, so I'll try",
+          "It could go either way",
           "I avoid thinking about it",
-          "I prepare before worrying"
+          "I prepare instead of worrying"
         ],
-        "reflection": "If there is an inner sentence underneath it, write it here."
+        "reflection": "If there is an underlying thought, write it here."
       }
     ]
   },
@@ -541,7 +541,7 @@ export const quests = [
     "title": "What keeps returning?",
     "accent": "sage",
     "purpose": "Trace one recent emotional moment: situation, feeling, body response, automatic thought, behavior, and relationship context.",
-    "intro": "Some responses have come with you a long time.",
+    "intro": "Some responses have been with you for a long time.",
     "reward": "You traced how one response moved through feeling, body, and action.",
     "questions": [
       {
@@ -564,7 +564,7 @@ export const quests = [
         "id": "memory-feeling",
         "prompt": "What feeling was closest in that moment?",
         "choices": [
-          "Hurt — as if I was the only one who didn't know",
+          "Hurt — as if I was the only one who didn't understand",
           "Anxiety — as if something might go wrong",
           "Unfairness — I didn't mean it that way",
           "Shame — as if something was exposed",
@@ -578,11 +578,11 @@ export const quests = [
       },
       {
         "id": "feeling-size",
-        "prompt": "How big did it feel?",
+        "prompt": "How intense did it feel?",
         "choices": [
-          "Gentle but present",
-          "Quite large",
-          "Large enough to feel hard to hold",
+          "Mild but noticeable",
+          "Quite strong",
+          "Strong enough to feel hard to handle",
           "I'm not sure"
         ],
         "type": "single",
@@ -592,9 +592,9 @@ export const quests = [
         "id": "inner-words",
         "prompt": "What words appeared inside you then?",
         "choices": [
-          "I'm lacking again",
-          "They are taking me lightly",
-          "I'm being left",
+          "I'm not enough again",
+          "They aren't taking me seriously",
+          "I'm being left behind",
           "If I make a mistake, it will be serious",
           "I need to adjust first",
           "No one understands what this is like for me",
@@ -610,9 +610,9 @@ export const quests = [
         "prompt": "How did your body respond?",
         "choices": [
           "My face felt hot",
-          "My words became faster",
+          "I started speaking faster",
           "My heart sped up",
-          "My breath became shallow",
+          "My breathing became shallow",
           "My body lost strength",
           "My neck or shoulders tightened",
           "My chest felt heavy",
@@ -629,8 +629,8 @@ export const quests = [
         "prompt": "What did you do in the situation?",
         "choices": [
           "Held it in first",
-          "Thought alone and created distance",
-          "Checked or confronted directly",
+          "Thought about it on my own and created distance",
+          "Asked directly or confronted them",
           "Pretended I was fine",
           "Noticed the other person's mood first",
           "Looked first for what I did wrong",
@@ -672,9 +672,9 @@ export const quests = [
         "prompt": "After the situation, what thought about yourself appeared?",
         "choices": [
           "I'm not skilled at expressing feelings",
-          "I shouldn't lean first",
+          "I shouldn't be the first to lean on someone",
           "I need to do well",
-          "I become small around people",
+          "I feel small around people",
           "I carry hurt for a long time",
           "Being alone is easier for me",
           "I seem hard to love",
@@ -715,26 +715,26 @@ export const quests = [
           "Someone and I weren't really understanding each other",
           "I was very careful then",
           "There may have been another way",
-          "It wasn't something I could simply pass by",
+          "It wasn't something I could simply move past",
           "That version of me is still vivid",
           "I think I did well then"
         ],
         "type": "single",
-        "reflection": "Choose what does not feel forced, then add your own words if needed."
+        "reflection": "Choose what feels closest, then add your own words if needed."
       },
       {
         "id": "memory-state",
-        "prompt": "How does that memory live inside you now?",
+        "prompt": "How does that memory feel to you now?",
         "choices": [
           "Sometimes I simply remember that it happened",
           "When it appears, the feeling comes back strongly",
           "I don't know exactly what it is, but something still catches my attention",
           "I keep it buried deeply",
           "It seems important, though I don't know why",
-          "It is a memory I sometimes want to take out and look at"
+          "It is a memory I sometimes want to look at again"
         ],
         "type": "single",
-        "reflection": "Choose what does not feel forced, then add your own words if needed."
+        "reflection": "Choose what feels closest, then add your own words if needed."
       },
       {
         "id": "memory-emotions",
@@ -742,23 +742,23 @@ export const quests = [
         "choices": [
           "Unfairness — I didn't mean it that way",
           "Regret — if only it had been different",
-          "Apology or self-blame - I should have done better",
+          "Guilt or self-blame — I should have done better",
           "Longing — that person or that time",
-          "Pride — I still did well",
+          "Pride — I still think I did well",
           "Loneliness — I was alone",
           "Warmth — it remains a good memory",
-          "Confusion — I still don't know what it is"
+          "Confusion — I still don't know what to make of it"
         ],
         "type": "multi",
-        "reflection": "Choose what does not feel forced, then add your own words if needed."
+        "reflection": "Choose what feels closest, then add your own words if needed."
       },
       {
         "id": "new-window",
-        "prompt": "Looking from who you are now, does anything appear differently?",
+        "prompt": "Looking at it from where you are now, does anything seem different?",
         "choices": [
-          "I thought I was bad then, but maybe not only that",
-          "I thought it was my fault, but maybe not only that",
-          "I thought the other person was bad, but maybe not only that",
+          "I thought I was the problem then, but maybe that wasn't the whole story",
+          "I thought it was my fault, but maybe more was going on than I could see",
+          "I thought the other person was to blame, but maybe there was more to it",
           "I thought there was no choice, but maybe there was another one",
           "I thought it was over, but maybe something is still open",
           "I thought it meant nothing, but maybe it did mean something",
@@ -766,12 +766,12 @@ export const quests = [
           "It was a good memory, but I had not connected it with who I am now"
         ],
         "type": "single",
-        "reflection": "Choose what does not feel forced, then add your own words if needed."
+        "reflection": "Choose what feels closest, then add your own words if needed."
       },
       {
         "id": "maybe",
         "type": "text",
-        "prompt": "As you look at this memory now, is there something new in your mind? You can begin with ‘maybe…’",
+        "prompt": "As you look at this memory now, is there something new in your mind? You can begin with “Maybe…”",
         "reflection": "Let one other possibility appear without forcing it."
       }
     ],
