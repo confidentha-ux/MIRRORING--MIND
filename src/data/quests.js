@@ -546,7 +546,7 @@ export const quests = [
     "questions": [
       {
         "id": "memory-scene",
-        "prompt": "Think of a recent moment when your heart felt unsettled. What kind of situation was it?",
+        "prompt": "Think of a recent moment when you felt unsettled. What kind of situation was it?",
         "choices": [
           "Someone's words hurt me",
           "A response I hoped for didn't come",
@@ -564,14 +564,14 @@ export const quests = [
         "id": "memory-feeling",
         "prompt": "What feeling was closest in that moment?",
         "choices": [
-          "Hurt - as if I was the only one who didn't know",
-          "Anxiety - as if something might go wrong",
-          "Unfairness - I didn't mean it that way",
-          "Shame - as if something was exposed",
-          "Anger - heat rising",
-          "Loneliness - as if no one was there",
-          "Helplessness - as if I couldn't do anything",
-          "Tension - as if my body froze"
+          "Hurt — as if I was the only one who didn't know",
+          "Anxiety — as if something might go wrong",
+          "Unfairness — I didn't mean it that way",
+          "Shame — as if something was exposed",
+          "Anger — heat rising",
+          "Loneliness — as if no one was there",
+          "Helplessness — as if I couldn't do anything",
+          "Tension — as if my body froze"
         ],
         "type": "single",
         "reflection": "What detail helps this feel more accurate?"
@@ -712,7 +712,7 @@ export const quests = [
         "choices": [
           "I think I missed something",
           "I should have done it differently",
-          "Someone and I weren't meeting each other clearly",
+          "Someone and I weren't really understanding each other",
           "I was very careful then",
           "There may have been another way",
           "It wasn't something I could simply pass by",
@@ -728,7 +728,7 @@ export const quests = [
         "choices": [
           "Sometimes I simply remember that it happened",
           "When it appears, the feeling comes back strongly",
-          "I don't know exactly what it is, but something catches",
+          "I don't know exactly what it is, but something still catches my attention",
           "I keep it buried deeply",
           "It seems important, though I don't know why",
           "It is a memory I sometimes want to take out and look at"
@@ -740,14 +740,14 @@ export const quests = [
         "id": "memory-emotions",
         "prompt": "What feeling does the memory carry?",
         "choices": [
-          "Unfairness - I didn't mean it that way",
-          "Regret - if only it had been different",
+          "Unfairness — I didn't mean it that way",
+          "Regret — if only it had been different",
           "Apology or self-blame - I should have done better",
-          "Longing - that person or that time",
-          "Pride - I still did well",
-          "Loneliness - I was alone",
-          "Warmth - it remains a good memory",
-          "Confusion - I still don't know what it is"
+          "Longing — that person or that time",
+          "Pride — I still did well",
+          "Loneliness — I was alone",
+          "Warmth — it remains a good memory",
+          "Confusion — I still don't know what it is"
         ],
         "type": "multi",
         "reflection": "Choose what does not feel forced, then add your own words if needed."
@@ -763,7 +763,7 @@ export const quests = [
           "I thought it was over, but maybe something is still open",
           "I thought it meant nothing, but maybe it did mean something",
           "I thought I wasn't enough, but maybe I was enough then",
-          "It was a good memory, but I had not connected it with who I'm now"
+          "It was a good memory, but I had not connected it with who I am now"
         ],
         "type": "single",
         "reflection": "Choose what does not feel forced, then add your own words if needed."
@@ -771,9 +771,10 @@ export const quests = [
       {
         "id": "maybe",
         "type": "text",
-        "prompt": "As you look at this memory now, is there something new in your mind? You can begin with, maybe...",
+        "prompt": "As you look at this memory now, is there something new in your mind? You can begin with ‘maybe…’",
         "reflection": "Let one other possibility appear without forcing it."
       }
-    ]
+    ],
+    "note": "Seeing another possibility does not erase the first one."
   }
 ];
