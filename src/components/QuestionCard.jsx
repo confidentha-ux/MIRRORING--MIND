@@ -48,6 +48,9 @@ export default function QuestionCard({
         {questionIndex === 0 && quest.intro && (
           <p className="quest-lead-in">{quest.intro}</p>
         )}
+        {questionIndex === 0 && quest.note && (
+          <p className="quest-note">{quest.note}</p>
+        )}
         <h1>{question.prompt}</h1>
         {!isTextOnly && (
           <div className="choice-list" role="list">
