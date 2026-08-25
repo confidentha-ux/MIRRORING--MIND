@@ -90,7 +90,7 @@ export default function WelcomeScreen({ onBegin }) {
 
         <div className="button-row landing-buttons">
           <button className="primary-button" onClick={onBegin}>
-            Begin gently
+            Begin
           </button>
         </div>
       </section>
