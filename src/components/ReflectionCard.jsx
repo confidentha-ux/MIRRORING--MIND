@@ -66,8 +66,8 @@ export default function ReflectionCard({
 
   const rows = [
     ["My default mode", reflection.defaultMode],
-    ["Emotion that appeared often", reflection.emotionWord],
-    ["Inner sentence that appeared", reflection.innerSentence],
+    ["Emotion that came up often", reflection.emotionWord],
+    ["Thought that appeared", reflection.innerSentence],
     ["Response pattern", reflection.responsePattern],
     ["One sentence I can carry today", reflection.carrySentence]
   ];
@@ -111,12 +111,15 @@ export default function ReflectionCard({
     <main className="screen final-screen">
       <section className="reflection-card">
         <p className="eyebrow">Today's Mirror</p>
-        <h1>What repeats and what shifted, seen together</h1>
+        <h1>What repeated and what shifted, seen together</h1>
         <p className="soft-note">{appCopy.finalNote}</p>
+        {appCopy.finalNoteSecond && (
+          <p className="soft-note">{appCopy.finalNoteSecond}</p>
+        )}
 
         {status === "loading" && (
           <div className="soft-panel synthesis-loading">
-            <p className="lead">Laying the five lenses over each other.</p>
+            <p className="lead">Looking at the five questions together.</p>
           </div>
         )}
 
@@ -179,12 +182,12 @@ export default function ReflectionCard({
 
             <p className="lead situation-block-note">
               {changed
-                ? "Something moved between the first time and the second. Not because one answer was better, but because you were looking through more than you were before."
-                : "You arrived at the same place twice. The choice held — and this time you could say what was holding it."}
+                ? "Something shifted between the first time and the second. Not because one answer was better, but because you were seeing more than you did before."
+                : "You arrived at the same place twice. The choice stayed the same — but this time, you could see what was behind it."}
             </p>
 
             <p className="lead situation-block-close">
-              Knowing what you decide by doesn't always change what you decide. But
+              Knowing what guides your decisions doesn't always change what you decide. But
               choosing while you can see your own reasons is different from
               repeating something you never named.
             </p>
