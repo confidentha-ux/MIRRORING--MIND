@@ -194,6 +194,11 @@ export default function ReflectionCard({
           </section>
         )}
 
+        <p className="closing-line">
+          Tomorrow the same moment may come again. You'll be reading it with
+          more than you had today.
+        </p>
+
         <div className="button-row button-row-stacked">
           {status !== "loading" && (
             <button className="secondary-button" onClick={handleCopy} type="button">
