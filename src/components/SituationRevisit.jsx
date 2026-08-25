@@ -30,7 +30,14 @@ export default function SituationRevisit({
       </div>
 
       <p className="lead revisit-intro">
-        You're looking at this moment again, after going through this lens.
+        You're looking at this moment again, after those questions.
+      </p>
+
+      <p className="revisit-emphasis">
+        The moment is the same. What you notice may not be.
+      </p>
+
+      <p className="lead revisit-intro">
         Choose whatever catches you first this time — it doesn't need to
         match what you chose before.
       </p>
