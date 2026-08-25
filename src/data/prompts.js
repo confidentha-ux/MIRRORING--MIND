@@ -16,7 +16,8 @@ export const appCopy = {
     "Sometimes, the pattern becomes visible only when you look at the same moment again.",
 
   mapTitle: "Five quiet questions",
-  mapText: "Move through them slowly, one at a time.",
+  mapText:
+    "Each one asks about a different part of how you respond. Move through them slowly, one at a time.",
 
   finalNote:
     "This is not a label. It is a snapshot of how your inner world moved today.",
