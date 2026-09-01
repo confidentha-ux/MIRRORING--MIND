@@ -542,7 +542,7 @@ export const quests = [
     "accent": "sage",
     "purpose": "Trace one recent emotional moment: situation, feeling, body response, automatic thought, behavior, and relationship context.",
     "intro": "Some responses have been with you for a long time.",
-    "reward": "You traced how one response moved through feeling, body, and action.",
+    "reward": "You followed one response all the way through your body.",
     "questions": [
       {
         "id": "memory-scene",
@@ -775,6 +775,6 @@ export const quests = [
         "reflection": "Let one other possibility appear without forcing it."
       }
     ],
-    "note": "Seeing another possibility does not erase the first one."
+    "note": "Seeing another possibility does not erase the first one. Take only what feels safe to look at."
   }
 ];
